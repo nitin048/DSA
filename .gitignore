@@ -65,14 +65,6 @@ cmake-build-*/
 !.vscode/README.md
 !.vscode/cpp.code-snippets
 !.vscode/SNIPPETS.md
-!.vscode/SETUP.md
-!.vscode/TROUBLESHOOTING.md
-!.vscode/CROSS_PLATFORM_SETUP.md
-!.vscode/README.md
-!.vscode/CLONE_TEST.md
-!.vscode/FORMATTING.md
-!.vscode/FORMAT_SETUP.md
-!.vscode/TEST_FORMAT.md
 !.vscode/c_cpp_properties.json
 !.vscode/settings.json
 !.vscode/extensions.json
@@ -258,3 +250,6 @@ doxygen_sqlite3.db
 # Misc
 .cache/
 *.orig
+
+# Build cache
+.cache/
