@@ -1,0 +1,247 @@
+# C++ Compiled Files
+*.o
+*.obj
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+a.out
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Object files
+*.slo
+*.lo
+*.ko
+*.elf
+
+# Linker output
+*.ilk
+*.map
+*.exp
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# CMake
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+Testing/
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+build/
+cmake-build-*/
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+.history/
+
+# Visual Studio
+.vs/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.VC.db
+*.VC.opendb
+ipch/
+*.opensdf
+*.sdf
+*.cachefile
+*.VC.VC.opendb
+
+# CLion
+.idea/
+cmake-build-*/
+
+# Xcode
+*.xcodeproj/
+*.xcworkspace/
+xcuserdata/
+*.moved-aside
+DerivedData/
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Code::Blocks
+*.layout
+*.depend
+*.cbp
+
+# Eclipse
+.cproject
+.project
+.settings/
+
+# NetBeans
+nbproject/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# Qt Creator
+*.pro.user
+*.pro.user.*
+*.qbs.user
+*.qbs.user.*
+*.moc
+moc_*.cpp
+moc_*.h
+qrc_*.cpp
+ui_*.h
+*.qmlc
+*.jsc
+Makefile*
+*build-*
+*.qm
+.qmake.cache
+.qmake.stash
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# Backup files
+*.bak
+*.swp
+*.swo
+*~
+*.tmp
+*.temp
+
+# Log files
+*.log
+
+# Test files (uncomment if you want to ignore test executables)
+# test
+# tests
+# *_test
+# *_tests
+
+# Input/Output files for testing
+*.in
+*.out
+input.txt
+output.txt
+
+# Profiling data
+*.gcda
+*.gcno
+*.gcov
+gmon.out
+callgrind.out.*
+perf.data
+perf.data.old
+
+# Valgrind
+*.memcheck
+vgcore.*
+
+# Core dumps
+core
+core.*
+
+# Package managers
+conan.lock
+conanbuildinfo.*
+conaninfo.txt
+graph_info.json
+
+# vcpkg
+vcpkg_installed/
+
+# Dependencies
+deps/
+dependencies/
+third_party/
+external/
+vendor/
+
+# Documentation generated files
+docs/_build/
+docs/html/
+docs/latex/
+Doxyfile.bak
+doxygen_sqlite3.db
+
+# Jupyter Notebooks (if using for notes)
+.ipynb_checkpoints/
+*.ipynb
+
+# Misc
+.cache/
+*.orig
