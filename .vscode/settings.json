@@ -1,30 +1,23 @@
 {
-  "C_Cpp.errorSquiggles": "enabled",
-  "C_Cpp.intelliSenseEngine": "default",
-  "C_Cpp.default.cppStandard": "c++17",
-  "C_Cpp.default.cStandard": "c17",
-  "C_Cpp.autocomplete": "default",
-  "C_Cpp.intelliSenseEngineFallback": "enabled",
-  "C_Cpp.enhancedColorization": "enabled",
-  "C_Cpp.loggingLevel": "Information",
-  "C_Cpp.default.compilerArgs": [
-    "-Wall",
-    "-Wextra",
-    "-Wpedantic",
-    "-std=c++17"
+  "clangd.path": "/opt/homebrew/opt/llvm/bin/clangd",
+  "clangd.arguments": [
+    "--background-index",
+    "--clang-tidy",
+    "--completion-style=detailed",
+    "--header-insertion=iwyu",
+    "--pch-storage=memory",
+    "--compile-commands-dir=${workspaceFolder}"
   ],
-  "code-runner.executorMap": {
-    "cpp": "cd $dir && g++ -std=c++17 -Wall -Wextra $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
-  },
-  "code-runner.executorMapByFileExtension": {
-    ".cpp": "cd $dir && g++ -std=c++17 -Wall -Wextra $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
-  },
-  "code-runner.runInTerminal": true,
-  "code-runner.saveFileBeforeRun": true,
-  "code-runner.clearPreviousOutput": true,
-  "editor.formatOnSave": false,
+  "clangd.fallbackFlags": [
+    "-std=c++17",
+    "-Wall",
+    "-Wextra"
+  ],
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": false,
   "editor.tabSize": 4,
-  "editor.insertSpaces": false,
+  "editor.insertSpaces": true,
   "editor.quickSuggestions": {
     "other": true,
     "comments": false,
@@ -32,31 +25,49 @@
   },
   "editor.parameterHints.enabled": true,
   "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "[cpp]": {
+    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true
+  },
+  "[c]": {
+    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true
+  },
+  "files.associations": {
+    "*.cpp": "cpp",
+    "*.c": "c",
+    "*.h": "cpp",
+    "*.hpp": "cpp"
+  },
+  "code-runner.executorMap": {
+    "cpp": "cd $dir && clang++ -std=c++17 -Wall -Wextra $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
+  },
+  "code-runner.runInTerminal": true,
+  "code-runner.saveFileBeforeRun": true,
+  "code-runner.clearPreviousOutput": true,
   "files.exclude": {
     "**/*.o": true,
     "**/*.out": true,
     "**/*.exe": true,
-    "**/*.dSYM": true,
-    "**/*.obj": true
+    "**/*.dSYM": true
   },
-  "C_Cpp_Runner.msvcBatchPath": "",
-  "C_Cpp_Runner.cCompilerPath": "gcc",
-  "C_Cpp_Runner.cppCompilerPath": "g++",
-  "C_Cpp_Runner.debuggerPath": "gdb",
+  "C_Cpp_Runner.cCompilerPath": "clang",
+  "C_Cpp_Runner.cppCompilerPath": "clang++",
+  "C_Cpp_Runner.debuggerPath": "lldb",
   "C_Cpp_Runner.cStandard": "c17",
   "C_Cpp_Runner.cppStandard": "c++17",
-  "C_Cpp_Runner.useMsvc": false,
   "C_Cpp_Runner.warnings": [
     "-Wall",
     "-Wextra",
-    "-Wpedantic",
-    "-Wshadow",
-    "-Wformat=2",
-    "-Wcast-align",
-    "-Wconversion",
-    "-Wsign-conversion",
-    "-Wnull-dereference"
+    "-Wpedantic"
   ],
+  "C_Cpp_Runner.enableWarnings": true,
+  "C_Cpp_Runner.msvcBatchPath": "",
+  "C_Cpp_Runner.useMsvc": false,
   "C_Cpp_Runner.msvcWarnings": [
     "/W4",
     "/permissive-",
@@ -73,7 +84,6 @@
     "/w44265",
     "/w14928"
   ],
-  "C_Cpp_Runner.enableWarnings": true,
   "C_Cpp_Runner.warningsAsError": false,
   "C_Cpp_Runner.compilerArgs": [],
   "C_Cpp_Runner.linkerArgs": [],
