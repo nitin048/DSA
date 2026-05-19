@@ -1,0 +1,229 @@
+{
+	"C++ Basic Boilerplate": {
+		"prefix": "cpp",
+		"body": [
+			"#include <iostream>",
+			"using namespace std;",
+			"",
+			"int main()",
+			"{",
+			"\t$0",
+			"\treturn 0;",
+			"}"
+		],
+		"description": "Basic C++ boilerplate with iostream"
+	},
+	
+	"C++ DSA Template": {
+		"prefix": "cppdsa",
+		"body": [
+			"#include <iostream>",
+			"#include <vector>",
+			"#include <algorithm>",
+			"using namespace std;",
+			"",
+			"int main()",
+			"{",
+			"\t$0",
+			"\treturn 0;",
+			"}"
+		],
+		"description": "C++ template for DSA with common includes"
+	},
+	
+	"C++ Competitive Programming Template": {
+		"prefix": "cppfast",
+		"body": [
+			"#include <iostream>",
+			"#include <vector>",
+			"#include <algorithm>",
+			"#include <string>",
+			"#include <map>",
+			"#include <set>",
+			"#include <queue>",
+			"#include <stack>",
+			"using namespace std;",
+			"",
+			"#define ll long long",
+			"#define vi vector<int>",
+			"#define vll vector<long long>",
+			"#define pb push_back",
+			"#define all(x) x.begin(), x.end()",
+			"",
+			"void solve()",
+			"{",
+			"\t$0",
+			"}",
+			"",
+			"int main()",
+			"{",
+			"\tios_base::sync_with_stdio(false);",
+			"\tcin.tie(NULL);",
+			"\t",
+			"\tsolve();",
+			"\t",
+			"\treturn 0;",
+			"}"
+		],
+		"description": "Fast I/O template for competitive programming"
+	},
+	
+	"C++ Class Template": {
+		"prefix": "cppclass",
+		"body": [
+			"class ${1:ClassName}",
+			"{",
+			"private:",
+			"\t$2",
+			"",
+			"public:",
+			"\t// Constructor",
+			"\t${1:ClassName}()",
+			"\t{",
+			"\t\t$0",
+			"\t}",
+			"\t",
+			"\t// Destructor",
+			"\t~${1:ClassName}()",
+			"\t{",
+			"\t\t",
+			"\t}",
+			"};"
+		],
+		"description": "C++ class template"
+	},
+	
+	"C++ Vector Declaration": {
+		"prefix": "vec",
+		"body": [
+			"vector<${1:int}> ${2:name};"
+		],
+		"description": "Vector declaration"
+	},
+	
+	"C++ Vector with Size": {
+		"prefix": "vecn",
+		"body": [
+			"vector<${1:int}> ${2:name}(${3:size});"
+		],
+		"description": "Vector with size"
+	},
+	
+	"C++ 2D Vector": {
+		"prefix": "vec2d",
+		"body": [
+			"vector<vector<${1:int}>> ${2:name}(${3:rows}, vector<${1:int}>(${4:cols}));"
+		],
+		"description": "2D vector declaration"
+	},
+	
+	"C++ For Loop": {
+		"prefix": "fori",
+		"body": [
+			"for(int ${1:i} = 0; ${1:i} < ${2:n}; ${1:i}++)",
+			"{",
+			"\t$0",
+			"}"
+		],
+		"description": "For loop"
+	},
+	
+	"C++ Range-based For Loop": {
+		"prefix": "forr",
+		"body": [
+			"for(auto ${1:item} : ${2:container})",
+			"{",
+			"\t$0",
+			"}"
+		],
+		"description": "Range-based for loop"
+	},
+	
+	"C++ While Loop": {
+		"prefix": "while",
+		"body": [
+			"while(${1:condition})",
+			"{",
+			"\t$0",
+			"}"
+		],
+		"description": "While loop"
+	},
+	
+	"C++ Input": {
+		"prefix": "cin",
+		"body": [
+			"cin >> ${1:variable};"
+		],
+		"description": "Input statement"
+	},
+	
+	"C++ Output": {
+		"prefix": "cout",
+		"body": [
+			"cout << ${1:variable} << endl;"
+		],
+		"description": "Output statement"
+	},
+	
+	"C++ Function": {
+		"prefix": "func",
+		"body": [
+			"${1:void} ${2:functionName}(${3:parameters})",
+			"{",
+			"\t$0",
+			"}"
+		],
+		"description": "Function template"
+	},
+	
+	"C++ Struct": {
+		"prefix": "struct",
+		"body": [
+			"struct ${1:StructName}",
+			"{",
+			"\t${2:int data;}",
+			"\t$0",
+			"};"
+		],
+		"description": "Struct template"
+	},
+	
+	"C++ Binary Search Template": {
+		"prefix": "binsearch",
+		"body": [
+			"int binarySearch(vector<int>& arr, int target)",
+			"{",
+			"\tint left = 0, right = arr.size() - 1;",
+			"\t",
+			"\twhile(left <= right)",
+			"\t{",
+			"\t\tint mid = left + (right - left) / 2;",
+			"\t\t",
+			"\t\tif(arr[mid] == target)",
+			"\t\t\treturn mid;",
+			"\t\telse if(arr[mid] < target)",
+			"\t\t\tleft = mid + 1;",
+			"\t\telse",
+			"\t\t\tright = mid - 1;",
+			"\t}",
+			"\t",
+			"\treturn -1;",
+			"}"
+		],
+		"description": "Binary search implementation"
+	},
+	
+	"C++ Comment Header": {
+		"prefix": "header",
+		"body": [
+			"/*",
+			" * File: ${TM_FILENAME}",
+			" * Author: ${1:Your Name}",
+			" * Date: ${CURRENT_DATE}/${CURRENT_MONTH}/${CURRENT_YEAR}",
+			" * Description: ${2:Description}",
+			" */"
+		],
+		"description": "File header comment"
+	}
+}
