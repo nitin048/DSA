@@ -39,11 +39,12 @@ This repository is fully configured for modern C++ development:
 
 ### 📚 Comprehensive Guides
 
-- **Variables** - [Complete guide](C++/Variables/README.md)
-- **Operators** - [All operators explained](C++/Operators/README.md)
-- **Input/Output** - [I/O operations](C++/Inputs/README.md)
-- **Conditionals** - [If, switch, ternary](C++/Conditional_Stmt/README.md)
-- **Type Casting** - [All cast types](C++/Typecasting/README.md)
+- **Basics** - [First C++ program](C++/01_Basics/README.md)
+- **Variables** - [Complete guide](C++/02_Variables/README.md)
+- **Operators** - [All operators explained](C++/03_Operators/README.md)
+- **Input/Output** - [I/O operations](C++/04_InputOutput/README.md)
+- **Type Casting** - [All cast types](C++/05_Typecasting/README.md)
+- **Conditionals** - [If, switch, ternary](C++/06_Conditionals/README.md)
 
 ### 🛠️ Development Tools
 
@@ -92,7 +93,8 @@ This repository is fully configured for modern C++ development:
 2. **Run setup script**
 
    ```bash
-   ./setup.sh
+   chmod +x scripts/setup.sh
+   ./scripts/setup.sh
    ```
 
 3. **Open in Kiro**
@@ -102,7 +104,8 @@ This repository is fully configured for modern C++ development:
 
 **That's it!** IntelliSense, auto-formatting, and all features work automatically! 🎉
 
-📖 **Detailed setup guide**: [SETUP.md](SETUP.md)
+📖 **Detailed setup guide**: [docs/SETUP.md](docs/SETUP.md)  
+📖 **Kiro IDE guide**: [docs/KIRO_SETUP.md](docs/KIRO_SETUP.md)
 
 ### For VS Code Users
 
@@ -113,7 +116,7 @@ This repository also works with VS Code:
 3. Install recommended extensions when prompted
 4. Reload VS Code
 
-📖 **VS Code setup guide**: [VSCODE_SETUP.md](VSCODE_SETUP.md)
+📖 **VS Code setup guide**: [docs/VSCODE_SETUP.md](docs/VSCODE_SETUP.md)
 
 ### For Other Editors
 
@@ -127,28 +130,49 @@ This repository also works with VS Code:
 
 ```
 DSA/
-├── C++/
-│   ├── Variables/          # Variables and data types
-│   ├── Operators/          # All C++ operators
-│   ├── Inputs/             # Input/Output operations
-│   ├── Typecasting/        # Type conversion
-│   └── ...
-├── .vscode/                # VS Code configuration
-│   ├── cpp.code-snippets   # 30+ code shortcuts
-│   ├── SNIPPETS.md         # Snippet documentation
-│   └── ...
-├── README.md               # This file
-└── VSCODE_SETUP.md         # VS Code setup guide
+├── C++/                        # C++ learning content (numbered for learning order)
+│   ├── 01_Basics/              # First C++ program
+│   ├── 02_Variables/           # Variables and data types
+│   ├── 03_Operators/           # All C++ operators
+│   ├── 04_InputOutput/         # Input/Output operations
+│   ├── 05_Typecasting/         # Type conversion
+│   ├── 06_Conditionals/        # If, switch, ternary
+│   └── 07_Loops/               # For, while, do-while (coming soon)
+│
+├── docs/                       # All documentation
+│   ├── SETUP.md                # Main setup guide
+│   ├── KIRO_SETUP.md           # Kiro IDE setup
+│   ├── VSCODE_SETUP.md         # VS Code setup
+│   ├── FORMATTING.md           # Formatting guide
+│   ├── TROUBLESHOOTING.md      # Troubleshooting
+│   └── CLONE_TEST.md           # Clone testing guide
+│
+├── scripts/                    # Utility scripts
+│   ├── setup.sh                # Automated setup
+│   └── format.sh               # Format all files
+│
+├── .vscode/                    # IDE configuration
+│   ├── settings.json           # Editor settings
+│   ├── cpp.code-snippets       # 30+ code shortcuts
+│   ├── SNIPPETS.md             # Snippet documentation
+│   └── README.md               # VS Code config info
+│
+├── .clang-format               # Formatting rules
+├── .gitignore                  # Git ignore rules
+├── compile_commands.json       # Build configuration
+└── README.md                   # This file
 ```
 
 ### Learning Resources
 
 Each topic includes comprehensive guides:
 
-- 📖 [Variables Guide](C++/Variables/README.md)
-- 📖 [Operators Guide](C++/Operators/README.md)
-- 📖 [Input/Output Guide](C++/Inputs/README.md)
-- 📖 [Type Casting Guide](C++/Typecasting/README.md)
+- 📖 [Basics Guide](C++/01_Basics/README.md)
+- 📖 [Variables Guide](C++/02_Variables/README.md)
+- 📖 [Operators Guide](C++/03_Operators/README.md)
+- 📖 [Input/Output Guide](C++/04_InputOutput/README.md)
+- 📖 [Type Casting Guide](C++/05_Typecasting/README.md)
+- 📖 [Conditionals Guide](C++/06_Conditionals/README.md)
 
 ## 💡 How to Use This Repository
 
