@@ -62,7 +62,9 @@ build/
 cmake-build-*/
 
 # Visual Studio Code
-.vscode/
+.vscode/*
+!.vscode/cpp.code-snippets
+!.vscode/SNIPPETS.md
 *.code-workspace
 .history/
 
