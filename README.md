@@ -13,9 +13,49 @@ This repository is designed to provide a structured approach to learning data st
 - Prepare for technical interviews
 - Understand time and space complexity analysis
 
+## ✨ Features
+
+This repository is fully configured for modern C++ development:
+
+### 🧠 IntelliSense
+
+- **Auto-completion** - Type `std::` and see suggestions
+- **Error detection** - Real-time syntax and semantic errors
+- **Hover documentation** - Hover over code for instant info
+- **Go to definition** - Cmd/Ctrl + Click to jump to definitions
+
+### 🎨 Auto-Formatting
+
+- **Format on save** - Code auto-formats when you save (Cmd/Ctrl + S)
+- **Consistent style** - Google C++ Style Guide with 4-space indentation
+- **Format on paste** - Pasted code is automatically formatted
+
+### ⚡ Code Snippets
+
+- **30+ shortcuts** - Type `cpp` + Tab for full boilerplate
+- **Control structures** - `if`, `for`, `while`, `switch` + Tab
+- **Data structures** - `vec`, `vec2d` + Tab for vectors
+- **See all**: [.vscode/SNIPPETS.md](.vscode/SNIPPETS.md)
+
+### 📚 Comprehensive Guides
+
+- **Variables** - [Complete guide](C++/Variables/README.md)
+- **Operators** - [All operators explained](C++/Operators/README.md)
+- **Input/Output** - [I/O operations](C++/Inputs/README.md)
+- **Conditionals** - [If, switch, ternary](C++/Conditional_Stmt/README.md)
+- **Type Casting** - [All cast types](C++/Typecasting/README.md)
+
+### 🛠️ Development Tools
+
+- **One-click run** - Click ▶️ or press Ctrl + Alt + N
+- **Error highlighting** - Red squiggles for errors
+- **Code navigation** - Find references, rename symbols
+- **Format script** - `./format.sh` to format all files
+
 ## 📖 Topics Covered
 
 ### Data Structures
+
 - Arrays and Strings
 - Linked Lists
 - Stacks and Queues
@@ -26,6 +66,7 @@ This repository is designed to provide a structured approach to learning data st
 - Tries
 
 ### Algorithms
+
 - Sorting (Bubble, Selection, Insertion, Merge, Quick, Heap)
 - Searching (Linear, Binary)
 - Recursion and Backtracking
@@ -37,31 +78,42 @@ This repository is designed to provide a structured approach to learning data st
 
 ## 🚀 Getting Started
 
-### For VS Code Users (Recommended)
+### Quick Setup (Recommended)
 
-This repository is pre-configured for VS Code with IntelliSense, code snippets, and one-click compilation!
+**For Kiro IDE users (fully configured!):**
 
 1. **Clone this repository**
+
    ```bash
    git clone https://github.com/nitin048/DSA.git
    cd DSA
    ```
 
-2. **Open in VS Code**
+2. **Run setup script**
+
    ```bash
-   code .
+   ./setup.sh
    ```
 
-3. **Install recommended extensions** (VS Code will prompt you)
-   - Click "Install All" when prompted
-   - Reload VS Code
+3. **Open in Kiro**
+   ```bash
+   kiro .
+   ```
 
-4. **Start coding!** 🎉
-   - IntelliSense will work automatically
-   - Use 30+ code snippets (type `cpp` + Tab)
-   - Click ▶️ to run code
+**That's it!** IntelliSense, auto-formatting, and all features work automatically! 🎉
 
-📖 **Detailed setup guide**: [VSCODE_SETUP.md](VSCODE_SETUP.md)
+📖 **Detailed setup guide**: [SETUP.md](SETUP.md)
+
+### For VS Code Users
+
+This repository also works with VS Code:
+
+1. Clone the repository
+2. Open in VS Code: `code .`
+3. Install recommended extensions when prompted
+4. Reload VS Code
+
+📖 **VS Code setup guide**: [VSCODE_SETUP.md](VSCODE_SETUP.md)
 
 ### For Other Editors
 
@@ -92,6 +144,7 @@ DSA/
 ### Learning Resources
 
 Each topic includes comprehensive guides:
+
 - 📖 [Variables Guide](C++/Variables/README.md)
 - 📖 [Operators Guide](C++/Operators/README.md)
 - 📖 [Input/Output Guide](C++/Inputs/README.md)
@@ -100,6 +153,7 @@ Each topic includes comprehensive guides:
 ## 💡 How to Use This Repository
 
 ### For Learning
+
 - Each topic includes:
   - Concept explanation with examples
   - Implementation examples
@@ -108,6 +162,7 @@ Each topic includes comprehensive guides:
   - Comprehensive README guides
 
 ### For VS Code Users
+
 - **Code Snippets**: Type shortcuts like `cpp`, `for`, `if` and press Tab
 - **IntelliSense**: Auto-completion and error detection
 - **One-Click Run**: Click ▶️ to compile and run
@@ -118,6 +173,7 @@ Each topic includes comprehensive guides:
 ## 🤝 Contributing
 
 Contributions are welcome! Feel free to:
+
 - Add new problems and solutions
 - Improve existing explanations
 - Fix bugs or typos

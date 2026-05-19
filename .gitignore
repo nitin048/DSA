@@ -55,7 +55,6 @@ Testing/
 Makefile
 cmake_install.cmake
 install_manifest.txt
-compile_commands.json
 CTestTestfile.cmake
 _deps
 build/
@@ -71,6 +70,9 @@ cmake-build-*/
 !.vscode/CROSS_PLATFORM_SETUP.md
 !.vscode/README.md
 !.vscode/CLONE_TEST.md
+!.vscode/FORMATTING.md
+!.vscode/FORMAT_SETUP.md
+!.vscode/TEST_FORMAT.md
 !.vscode/c_cpp_properties.json
 !.vscode/settings.json
 !.vscode/extensions.json
