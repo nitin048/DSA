@@ -37,6 +37,34 @@ This repository is designed to provide a structured approach to learning data st
 
 ## 🚀 Getting Started
 
+### For VS Code Users (Recommended)
+
+This repository is pre-configured for VS Code with IntelliSense, code snippets, and one-click compilation!
+
+1. **Clone this repository**
+   ```bash
+   git clone https://github.com/nitin048/DSA.git
+   cd DSA
+   ```
+
+2. **Open in VS Code**
+   ```bash
+   code .
+   ```
+
+3. **Install recommended extensions** (VS Code will prompt you)
+   - Click "Install All" when prompted
+   - Reload VS Code
+
+4. **Start coding!** 🎉
+   - IntelliSense will work automatically
+   - Use 30+ code snippets (type `cpp` + Tab)
+   - Click ▶️ to run code
+
+📖 **Detailed setup guide**: [VSCODE_SETUP.md](VSCODE_SETUP.md)
+
+### For Other Editors
+
 1. Clone this repository
 2. Navigate through the topics in order
 3. Read the explanations and study the implementations
@@ -46,29 +74,46 @@ This repository is designed to provide a structured approach to learning data st
 ## 📁 Repository Structure
 
 ```
-├── data-structures/
-│   ├── arrays/
-│   ├── linked-lists/
-│   ├── trees/
+DSA/
+├── C++/
+│   ├── Variables/          # Variables and data types
+│   ├── Operators/          # All C++ operators
+│   ├── Inputs/             # Input/Output operations
+│   ├── Typecasting/        # Type conversion
 │   └── ...
-├── algorithms/
-│   ├── sorting/
-│   ├── searching/
-│   ├── dynamic-programming/
+├── .vscode/                # VS Code configuration
+│   ├── cpp.code-snippets   # 30+ code shortcuts
+│   ├── SNIPPETS.md         # Snippet documentation
 │   └── ...
-└── problems/
-    ├── easy/
-    ├── medium/
-    └── hard/
+├── README.md               # This file
+└── VSCODE_SETUP.md         # VS Code setup guide
 ```
+
+### Learning Resources
+
+Each topic includes comprehensive guides:
+- 📖 [Variables Guide](C++/Variables/README.md)
+- 📖 [Operators Guide](C++/Operators/README.md)
+- 📖 [Input/Output Guide](C++/Inputs/README.md)
+- 📖 [Type Casting Guide](C++/Typecasting/README.md)
 
 ## 💡 How to Use This Repository
 
+### For Learning
 - Each topic includes:
-  - Concept explanation
+  - Concept explanation with examples
   - Implementation examples
   - Time and space complexity analysis
   - Practice problems with solutions
+  - Comprehensive README guides
+
+### For VS Code Users
+- **Code Snippets**: Type shortcuts like `cpp`, `for`, `if` and press Tab
+- **IntelliSense**: Auto-completion and error detection
+- **One-Click Run**: Click ▶️ to compile and run
+- **Documentation**: All guides in `.vscode/` folder
+
+📖 **See all snippets**: [.vscode/SNIPPETS.md](.vscode/SNIPPETS.md)
 
 ## 🤝 Contributing
 

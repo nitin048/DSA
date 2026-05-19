@@ -63,8 +63,17 @@ cmake-build-*/
 
 # Visual Studio Code
 .vscode/*
+!.vscode/README.md
 !.vscode/cpp.code-snippets
 !.vscode/SNIPPETS.md
+!.vscode/SETUP.md
+!.vscode/TROUBLESHOOTING.md
+!.vscode/CROSS_PLATFORM_SETUP.md
+!.vscode/README.md
+!.vscode/CLONE_TEST.md
+!.vscode/c_cpp_properties.json
+!.vscode/settings.json
+!.vscode/extensions.json
 *.code-workspace
 .history/
 
