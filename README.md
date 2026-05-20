@@ -150,7 +150,7 @@ DSA/
 │   ├── 04_InputOutput/         # Input/Output operations
 │   ├── 05_Typecasting/         # Type conversion
 │   ├── 06_Conditionals/        # If, switch, ternary
-│   └── 07_Loops/               # For, while, do-while (coming soon)
+│   └── 07_Loops/               # For, while, do-while 
 │
 ├── docs/                       # All documentation
 │   ├── SETUP.md                # Main setup guide
