@@ -1,58 +1,45 @@
 #!/bin/bash
 
 # Script to automatically update .gitignore with all C++ executable names
-# This ensures all compiled executables (without extension) are ignored
+# Run this after adding new .cpp files to keep .gitignore up to date
 
-echo "🔍 Finding all .cpp files..."
+echo "🔍 Scanning for .cpp files in C++ directory..."
 
-# Find all .cpp files and extract their base names (without .cpp extension)
-cpp_files=$(find C++ -name "*.cpp" -type f)
+# Find all .cpp files and extract their base names
+cpp_files=$(find C++ -name "*.cpp" -type f | sort)
+count=$(echo "$cpp_files" | wc -l | tr -d ' ')
 
-echo "📝 Updating .gitignore with executable names..."
-
-# Create a temporary list of executables to ignore
-temp_file=$(mktemp)
-
-# Add header
-cat > "$temp_file" << 'EOF'
-# Compiled executables in C++ folders (no extension)
-# Auto-generated list - DO NOT EDIT MANUALLY
-# Run ./scripts/update_gitignore.sh to update this list
-EOF
-
-# Add each .cpp file's executable name
-for file in $cpp_files; do
-    # Get base name without extension
-    basename=$(basename "$file" .cpp)
-    # Add to ignore list
-    echo "C++/**/$basename" >> "$temp_file"
-done
-
-# Add pattern-based ignores
-cat >> "$temp_file" << 'EOF'
-
-# Pattern-based ignores
-C++/**/*_prblm
-C++/**/*_problem
-C++/**/*_test
-C++/**/*_solution
-EOF
-
+echo "✅ Found $count .cpp files"
 echo ""
-echo "✅ Found $(echo "$cpp_files" | wc -l) .cpp files"
-echo ""
-echo "📋 Executables that will be ignored:"
+
+# Create list of executable names
+echo "📝 Executable names to ignore:"
 echo "-----------------------------------"
+
+executables=()
 for file in $cpp_files; do
     basename=$(basename "$file" .cpp)
+    executables+=("$basename")
     echo "  - $basename"
 done
+
 echo "-----------------------------------"
 echo ""
-echo "💡 To apply these changes, you need to manually update .gitignore"
-echo "   or copy the content from: $temp_file"
+
+# Generate .gitignore entries
+echo "📋 Generated .gitignore entries:"
 echo ""
-echo "🔧 Temporary file created at: $temp_file"
+echo "# Auto-generated executable ignores"
+echo "# Generated on: $(date)"
 echo ""
-echo "📖 To view the generated ignore rules:"
-echo "   cat $temp_file"
+
+for exe in "${executables[@]}"; do
+    echo "C++/**/$exe"
+done
+
+echo ""
+echo "💡 To update .gitignore:"
+echo "   1. Copy the entries above"
+echo "   2. Paste them into .gitignore under the 'Pattern 2' section"
+echo "   3. Or run: ./scripts/auto_update_gitignore.sh"
+echo ""
