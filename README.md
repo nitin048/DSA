@@ -48,10 +48,14 @@ This repository is fully configured for modern C++ development:
 
 ### 🛠️ Development Tools
 
-- **One-click run** - Click ▶️ or press Ctrl + Alt + N
+- **Quick compile & run** - `./scripts/cpp file.cpp` (easiest way!)
+- **Detailed run script** - `./scripts/run.sh file.cpp`
+- **One-click run** - Click ▶️ or press Ctrl + Alt + N in Kiro/VS Code
 - **Error highlighting** - Red squiggles for errors
 - **Code navigation** - Find references, rename symbols
-- **Format script** - `./format.sh` to format all files
+- **Format script** - `./scripts/format.sh` to format all files
+
+📖 **Quick Run Guide:** [docs/QUICK_RUN_GUIDE.md](docs/QUICK_RUN_GUIDE.md)
 
 ## 📖 Topics Covered
 
@@ -90,14 +94,22 @@ This repository is fully configured for modern C++ development:
    cd DSA
    ```
 
-2. **Run setup script**
+2. **Test it works (no setup needed!)**
+
+   ```bash
+   ./scripts/cpp C++/01_Basics/FirstCode.cpp
+   ```
+
+   **It works!** ✅ You can start coding immediately!
+
+3. **Optional: Full IDE setup (IntelliSense + Format-on-save)**
 
    ```bash
    chmod +x scripts/setup.sh
    ./scripts/setup.sh
    ```
 
-3. **Open in Kiro**
+4. **Open in Kiro**
    ```bash
    kiro .
    ```
@@ -105,7 +117,8 @@ This repository is fully configured for modern C++ development:
 **That's it!** IntelliSense, auto-formatting, and all features work automatically! 🎉
 
 📖 **Detailed setup guide**: [docs/SETUP.md](docs/SETUP.md)  
-📖 **Kiro IDE guide**: [docs/KIRO_SETUP.md](docs/KIRO_SETUP.md)
+📖 **Kiro IDE guide**: [docs/KIRO_SETUP.md](docs/KIRO_SETUP.md)  
+📖 **Clone & Test guide**: [docs/CLONE_AND_TEST.md](docs/CLONE_AND_TEST.md)
 
 ### For VS Code Users
 
