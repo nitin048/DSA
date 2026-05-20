@@ -107,7 +107,20 @@ C++/**/a.out           # Ignores a.out in any C++ subdirectory
 
 # Specific executables
 C++/**/whileLoop       # Ignores whileLoop executable
+C++/**/nestedLoop      # Ignores nestedLoop executable
 C++/**/*_prblm         # Ignores files ending with _prblm
+```
+
+### Automatic Checking
+
+Use our helper scripts to check for untracked executables:
+
+```bash
+# Check for untracked executables
+./scripts/check_executables.sh
+
+# Update .gitignore with all .cpp names
+./scripts/update_gitignore.sh
 ```
 
 ---
@@ -251,6 +264,53 @@ echo "C++/**/*_solution" >> .gitignore
 ```bash
 echo "build/" >> .gitignore
 ```
+
+---
+
+## 🛠️ Helper Scripts
+
+We've created helper scripts to manage executables:
+
+### Check for Untracked Executables
+
+```bash
+./scripts/check_executables.sh
+```
+
+**What it does:**
+
+- ✅ Scans C++ directory for untracked files
+- ✅ Identifies executables without extensions
+- ✅ Shows which files should be added to .gitignore
+- ✅ Suggests the exact .gitignore entries
+
+**Example output:**
+
+```
+🔍 Checking for untracked executable files...
+
+⚠️  Found untracked executable files:
+-----------------------------------
+  ❌ C++/07_Loops/nestedLoop
+     → Compiled from: C++/07_Loops/nestedLoop.cpp
+-----------------------------------
+
+💡 To ignore these files, add them to .gitignore:
+   C++/**/nestedLoop
+```
+
+### Update Gitignore Automatically
+
+```bash
+./scripts/update_gitignore.sh
+```
+
+**What it does:**
+
+- ✅ Finds all .cpp files in the repository
+- ✅ Generates .gitignore entries for their executables
+- ✅ Creates a temporary file with all entries
+- ✅ Shows you what will be ignored
 
 ---
 
