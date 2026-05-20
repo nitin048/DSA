@@ -28,9 +28,11 @@ a.out
 
 # Compiled executables in C++ folders (no extension)
 # These are created by our run scripts
+# Pattern: Ignore files with same name as .cpp files
 C++/**/whileLoop
 C++/**/forLoop
 C++/**/doWhileLoop
+C++/**/nestedLoop
 C++/**/ifElse
 C++/**/if_else_if
 C++/**/ternaryStmt
@@ -44,9 +46,13 @@ C++/**/unary
 C++/**/implicitTypeCasting
 C++/**/explicitTypeCasting
 C++/**/FirstCode
+
+# Pattern-based ignores for problem files
 C++/**/*_prblm
 C++/**/*_problem
 C++/**/*_test
+C++/**/*Loop
+C++/**/*loop
 
 # Precompiled Headers
 *.gch
