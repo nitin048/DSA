@@ -24,6 +24,29 @@
 *.out
 *.app
 a.out
+**/a.out
+
+# Compiled executables in C++ folders (no extension)
+# These are created by our run scripts
+C++/**/whileLoop
+C++/**/forLoop
+C++/**/doWhileLoop
+C++/**/ifElse
+C++/**/if_else_if
+C++/**/ternaryStmt
+C++/**/calculator
+C++/**/variables
+C++/**/inputs
+C++/**/arithmetic
+C++/**/relational
+C++/**/logical
+C++/**/unary
+C++/**/implicitTypeCasting
+C++/**/explicitTypeCasting
+C++/**/FirstCode
+C++/**/*_prblm
+C++/**/*_problem
+C++/**/*_test
 
 # Precompiled Headers
 *.gch

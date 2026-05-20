@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Quick C++ runner
+# Usage: ./scripts/cpp file.cpp
+
+if [ $# -eq 0 ]; then
+    echo "Usage: ./scripts/cpp <file.cpp>"
+    exit 1
+fi
+
+g++ -std=c++17 -Wall -Wextra "$1" && ./a.out
