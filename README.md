@@ -230,7 +230,6 @@ DSA/
 │
 ├── .clang-format               # Formatting rules
 ├── .gitignore                  # Git ignore rules
-├── compile_commands.json       # Build configuration
 ├── Makefile                    # Make commands
 └── README.md                   # This file
 ```

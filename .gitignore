@@ -42,6 +42,11 @@
 a.out
 **/a.out
 
+# Build configuration (contains local paths - DO NOT COMMIT)
+compile_commands.json
+.clangd/
+.cache/
+
 # Linker output
 *.ilk
 *.map
@@ -152,8 +157,9 @@ buck-out/
 !.vscode/c_cpp_properties.json
 !.vscode/settings.json
 !.vscode/extensions.json
-!.vscode/launch.json
-!.vscode/tasks.json
+# Ignore user-specific files (contain local paths)
+.vscode/launch.json
+.vscode/tasks.json
 *.code-workspace
 .history/
 

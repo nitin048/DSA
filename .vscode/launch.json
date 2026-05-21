@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/nitinpradhan/Learning/DSA/C++/07_Loops",
-      "program": "/Users/nitinpradhan/Learning/DSA/C++/07_Loops/build/Debug/outDebug"
+      "cwd": "/Users/nitinpradhan/Learning/DSA/C++/08_Patterns",
+      "program": "/Users/nitinpradhan/Learning/DSA/C++/08_Patterns/build/Debug/outDebug"
     }
   ]
 }
