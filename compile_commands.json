@@ -1,7 +1,0 @@
-[
-  {
-    "directory": "/Users/nitinpradhan/Learning/DSA",
-    "command": "/usr/bin/clang++ -std=c++17 -Wall -Wextra -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -c C++/Conditional_Stmt/if_else_if.cpp",
-    "file": "C++/Conditional_Stmt/if_else_if.cpp"
-  }
-]
