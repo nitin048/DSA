@@ -4,7 +4,7 @@ This guide explains what files are ignored and why.
 
 ---
 
-## ✅ What Gets Ignored
+## 🚫 What Gets Ignored
 
 ### 1. **Compiled Executables**
 
@@ -18,7 +18,15 @@ whileLoop               # Compiled from whileLoop.cpp
 calculator              # Compiled from calculator.cpp
 ```
 
-### 2. **Object Files**
+### 2. **Temporary Files**
+
+```bash
+tempCodeRunnerFile.cpp   # Code Runner temp files
+tempCodeRunnerFile.c     # C temp files
+tempCodeRunnerFile.*     # Any temp runner files
+```
+
+### 3. **Object Files**
 
 ```bash
 *.o                     # Object files
