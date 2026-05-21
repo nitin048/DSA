@@ -1,8 +1,8 @@
+// learning variable
 #include <iostream>
 using namespace std;
 
-int main()
-{
+int main() {
     int age = 25;
     char grade = 'A';
     float pi = 3.14;
