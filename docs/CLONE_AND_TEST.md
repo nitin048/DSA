@@ -4,9 +4,67 @@ This guide helps you verify that everything works after cloning the repository.
 
 ---
 
-## ✅ Quick Test (2 Minutes)
+## 🌍 Universal Setup (Recommended!)
 
-After cloning, run these commands to verify everything works:
+This repository works on **ALL operating systems** with one-command setup! 🎉
+
+### **Step 1: Clone**
+
+```bash
+git clone https://github.com/nitin048/DSA.git
+cd DSA
+```
+
+### **Step 2: Run Universal Setup** (Choose ONE)
+
+**🐍 Option 1: Python Script** (Works Everywhere!)
+
+```bash
+python scripts/setup.py
+```
+
+or
+
+```bash
+python3 scripts/setup.py
+```
+
+**🐚 Option 2: Shell Script** (macOS/Linux)
+
+```bash
+./scripts/setup.sh
+```
+
+**🪟 Option 3: Batch File** (Windows)
+
+```cmd
+scripts\setup.bat
+```
+
+Or navigate to `scripts/` folder and **double-click** `setup.bat` on Windows!
+
+### **What Gets Installed:**
+
+- ✅ Development tools (clangd, clang-format)
+- ✅ Git hooks (beautiful commit messages with emojis 🎉)
+- ✅ IDE configuration (IntelliSense, auto-formatting)
+- ✅ All scripts made executable
+
+### **Step 3: Test It Works!**
+
+```bash
+./scripts/cpp C++/01_Basics/FirstCode.cpp
+```
+
+**Expected:** Program compiles and runs! ✅
+
+📖 **Detailed cross-platform guide:** [CROSS_PLATFORM_SETUP.md](CROSS_PLATFORM_SETUP.md)
+
+---
+
+## ✅ Quick Test (Without Setup)
+
+Want to test immediately without running setup? Try these:
 
 ```bash
 # 1. Clone the repository
@@ -24,6 +82,8 @@ make run FILE=C++/06_Conditionals/ifElse.cpp
 ```
 
 **Expected Result:** All three commands should compile and run successfully! ✅
+
+**Note:** For full IDE features (IntelliSense, format-on-save), run the universal setup above.
 
 ---
 
