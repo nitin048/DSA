@@ -139,15 +139,15 @@ code .    # For VS Code
 
 ---
 
-### 📚 Setup Guides
+### 📚 Documentation
 
-- 🌍 **[Universal Setup Summary](docs/UNIVERSAL_SETUP_SUMMARY.md)** - Quick overview of all setup methods
-- 🌐 **[Cross-Platform Setup](docs/CROSS_PLATFORM_SETUP.md)** - Detailed guide for all OS
-- 📋 **[Setup Quick Reference](docs/SETUP_QUICK_REFERENCE.md)** - One-page quick reference
-- 🧪 **[Clone & Test](docs/CLONE_AND_TEST.md)** - Testing guide
-- 🎯 **[Main Setup](docs/SETUP.md)** - Original setup guide
-- 💻 **[Kiro IDE Setup](docs/KIRO_SETUP.md)** - Kiro-specific guide
-- 🔧 **[VS Code Setup](docs/VSCODE_SETUP.md)** - VS Code-specific guide
+- 🚀 **[Complete Setup Guide](docs/SETUP.md)** - Everything you need to get started
+- ⚡ **[Quick Reference](docs/QUICK_REFERENCE.md)** - Command cheat sheet
+- 🎣 **[Git Hooks Guide](docs/GIT_HOOKS_GUIDE.md)** - Beautiful commit messages
+- 🏃 **[Quick Run Guide](docs/QUICK_RUN_GUIDE.md)** - Compile & run methods
+- 🚫 **[Gitignore Guide](docs/GITIGNORE.md)** - How executables are handled
+- 🎨 **[Formatting Guide](docs/FORMATTING.md)** - Code formatting
+- 🆘 **[Troubleshooting](docs/TROUBLESHOOTING.md)** - Common issues & solutions
 
 ---
 

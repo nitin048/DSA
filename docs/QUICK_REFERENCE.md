@@ -4,7 +4,33 @@ Essential commands and shortcuts for working with this repository.
 
 ---
 
-## 🚀 Compile & Run
+## 🚀 Setup (First Time)
+
+### **Clone Repository**
+
+```bash
+git clone https://github.com/nitin048/DSA.git
+cd DSA
+```
+
+### **Run Setup** (Choose ONE)
+
+| Your OS        | Command                   | Notes            |
+| -------------- | ------------------------- | ---------------- |
+| **Any OS** 🌍  | `python scripts/setup.py` | **Recommended!** |
+| **macOS** 🍎   | `./scripts/setup.sh`      | Native bash      |
+| **Linux** 🐧   | `./scripts/setup.sh`      | Native bash      |
+| **Windows** 🪟 | `scripts\setup.bat`       | Double-click OK  |
+
+### **Test It Works**
+
+```bash
+./scripts/cpp C++/01_Basics/FirstCode.cpp
+```
+
+---
+
+## 💻 Compile & Run
 
 ```bash
 # Shortest way (13 chars + filename)
@@ -51,70 +77,10 @@ git status --ignored
 
 # Remove tracked executable
 git rm --cached filename
-```
 
----
-
-## 🛠️ Setup
-
-```bash
-# Full setup (IntelliSense + Formatting)
-./scripts/setup.sh
-
-# Make scripts executable
-chmod +x scripts/*.sh
-
-# Test setup
-./scripts/cpp C++/01_Basics/FirstCode.cpp
-```
-
----
-
-## 📁 File Structure
-
-```
-DSA/
-├── C++/              # Learning content (numbered)
-├── docs/             # All documentation
-├── scripts/          # Utility scripts
-└── .vscode/          # IDE configuration
-```
-
----
-
-## 🎯 Common Tasks
-
-### Create New C++ File
-
-```bash
-# Create file
-touch C++/07_Loops/myprogram.cpp
-
-# Edit and compile
-./scripts/cpp C++/07_Loops/myprogram.cpp
-```
-
-### Add to Git
-
-```bash
-# Add source files only
-git add C++/**/*.cpp C++/**/*.md
-
-# Check status
-git status
-
-# Commit
-git commit -m "Add new program"
-```
-
-### Clean Compiled Files
-
-```bash
-# Remove all a.out
-find C++ -name "a.out" -delete
-
-# Remove all executables (be careful!)
-./scripts/check_executables.sh  # Check first
+# Commit (see beautiful messages!)
+git add .
+git commit -m "Your message"
 ```
 
 ---
@@ -133,17 +99,53 @@ find C++ -name "a.out" -delete
 
 ---
 
-## 📚 Documentation
+## 📁 File Structure
 
-| Topic             | File                                          |
-| ----------------- | --------------------------------------------- |
-| **Main README**   | [README.md](../README.md)                     |
-| **Setup Guide**   | [docs/SETUP.md](SETUP.md)                     |
-| **Kiro Setup**    | [docs/KIRO_SETUP.md](KIRO_SETUP.md)           |
-| **Quick Run**     | [docs/QUICK_RUN_GUIDE.md](QUICK_RUN_GUIDE.md) |
-| **Gitignore**     | [docs/GITIGNORE_GUIDE.md](GITIGNORE_GUIDE.md) |
-| **Clone & Test**  | [docs/CLONE_AND_TEST.md](CLONE_AND_TEST.md)   |
-| **Code Snippets** | [.vscode/SNIPPETS.md](../.vscode/SNIPPETS.md) |
+```
+DSA/
+├── C++/              # Learning content (numbered 01-08)
+├── docs/             # All documentation
+├── scripts/          # All scripts & setup
+├── hooks/            # Git hooks
+└── .vscode/          # IDE configuration
+```
+
+---
+
+## 🎯 Common Tasks
+
+### **Create New C++ File**
+
+```bash
+# Create file
+touch C++/07_Loops/myLoop.cpp
+
+# Edit and compile
+./scripts/cpp C++/07_Loops/myLoop.cpp
+```
+
+### **Add to Git**
+
+```bash
+# Add source files only
+git add C++/**/*.cpp C++/**/*.md
+
+# Check status
+git status
+
+# Commit
+git commit -m "Add new program"
+```
+
+### **Clean Compiled Files**
+
+```bash
+# Remove all a.out
+find C++ -name "a.out" -delete
+
+# Check executables first
+./scripts/check_executables.sh
+```
 
 ---
 
@@ -152,8 +154,23 @@ find C++ -name "a.out" -delete
 ```
 01_Basics → 02_Variables → 03_Operators → 04_InputOutput
     ↓
-05_Typecasting → 06_Conditionals → 07_Loops
+05_Typecasting → 06_Conditionals → 07_Loops → 08_Patterns
 ```
+
+---
+
+## 📚 Documentation
+
+| Topic               | File                                             |
+| ------------------- | ------------------------------------------------ |
+| **Main README**     | [README.md](../README.md)                        |
+| **Setup Guide**     | [SETUP.md](SETUP.md)                             |
+| **Quick Run**       | [QUICK_RUN_GUIDE.md](QUICK_RUN_GUIDE.md)         |
+| **Git Hooks**       | [GIT_HOOKS_GUIDE.md](GIT_HOOKS_GUIDE.md)         |
+| **Gitignore**       | [GITIGNORE.md](GITIGNORE.md)                     |
+| **Formatting**      | [FORMATTING.md](FORMATTING.md)                   |
+| **Troubleshooting** | [TROUBLESHOOTING.md](TROUBLESHOOTING.md)         |
+| **Code Snippets**   | [../.vscode/SNIPPETS.md](../.vscode/SNIPPETS.md) |
 
 ---
 
@@ -163,6 +180,7 @@ find C++ -name "a.out" -delete
 | ---------------------------- | ----------------------------------------- |
 | **Permission denied**        | `chmod +x scripts/*.sh`                   |
 | **g++ not found**            | Install: `xcode-select --install` (macOS) |
+| **python not found**         | Try `python3 scripts/setup.py`            |
 | **Executable tracked**       | `./scripts/check_executables.sh`          |
 | **Format not working**       | Run `./scripts/setup.sh`                  |
 | **IntelliSense not working** | Restart IDE after setup                   |
@@ -172,10 +190,10 @@ find C++ -name "a.out" -delete
 ## 💡 Pro Tips
 
 1. **Use tab completion** - Type `./scripts/` and press Tab
-2. **Use aliases** - See [docs/QUICK_RUN_GUIDE.md](QUICK_RUN_GUIDE.md)
-3. **Check before commit** - Run `./scripts/check_executables.sh`
-4. **Format before commit** - Run `./scripts/format.sh`
-5. **Read the README** - Each folder has a README.md
+2. **Check before commit** - Run `./scripts/check_executables.sh`
+3. **Format before commit** - Run `./scripts/format.sh`
+4. **Read the README** - Each folder has a README.md
+5. **Use code snippets** - Type `cpp` + Tab for boilerplate
 
 ---
 
@@ -184,6 +202,7 @@ find C++ -name "a.out" -delete
 - **C++ Reference:** https://en.cppreference.com/
 - **Learn C++:** https://www.learncpp.com/
 - **Git Documentation:** https://git-scm.com/doc
+- **DSA Practice:** https://leetcode.com/
 
 ---
 

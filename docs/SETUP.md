@@ -1,355 +1,520 @@
-# DSA Repository - Quick Setup Guide
+# 🚀 Complete Setup Guide
 
-Welcome! This repository is fully configured for C++ development. Follow these simple steps to get started.
+This is the **complete setup guide** for the DSA repository. Works on **Windows 🪟, macOS 🍎, and Linux 🐧**!
 
 ---
 
-## 🚀 Quick Start (3 Steps)
+## 📋 Table of Contents
 
-### Step 1: Clone the Repository
+1. [Quick Start](#-quick-start)
+2. [Universal Setup](#-universal-setup)
+3. [Platform-Specific Instructions](#-platform-specific-instructions)
+4. [IDE Configuration](#-ide-configuration)
+5. [Testing Your Setup](#-testing-your-setup)
+6. [Troubleshooting](#-troubleshooting)
+
+---
+
+## ⚡ Quick Start
+
+### **Step 1: Clone Repository**
 
 ```bash
 git clone https://github.com/nitin048/DSA.git
 cd DSA
 ```
 
-### Step 2: Run Setup Script
+### **Step 2: Run Setup** (Choose ONE method)
+
+**🐍 Python (Recommended - Works Everywhere!)**
 
 ```bash
-./setup.sh
+python scripts/setup.py
 ```
 
-This will automatically:
+**🐚 Shell (macOS/Linux)**
 
-- ✅ Install clangd (IntelliSense)
-- ✅ Install clang-format (Code formatting)
-- ✅ Install Kiro extensions
-- ✅ Verify everything is working
+```bash
+./scripts/setup.sh
+```
 
-### Step 3: Open in Kiro
+**🪟 Batch (Windows)**
+
+```cmd
+scripts\setup.bat
+```
+
+Or navigate to `scripts/` folder and double-click `setup.bat`!
+
+### **Step 3: Test It Works**
+
+```bash
+./scripts/cpp C++/01_Basics/FirstCode.cpp
+```
+
+**That's it!** ✅ You're ready to code! 🎉
+
+---
+
+## 🌍 Universal Setup
+
+### **What Gets Installed:**
+
+All setup scripts install:
+
+- ✅ **clangd** - IntelliSense (auto-completion, error detection)
+- ✅ **clang-format** - Code formatting
+- ✅ **Git hooks** - Beautiful commit messages with emojis 🎉
+- ✅ **IDE configuration** - All settings
+- ✅ **Scripts** - All made executable
+
+### **Setup Process:**
+
+```
+🚀 Start Setup
+   ↓
+🖥️  Detect Operating System
+   ↓
+📦 Install Development Tools
+   ├─ clangd (IntelliSense)
+   ├─ clang-format (formatting)
+   └─ LLVM tools
+   ↓
+🎣 Install Git Hooks
+   ├─ Pre-commit hook
+   └─ Post-commit hook
+   ↓
+🎨 Format Code (Optional)
+   └─ Format all C++ files
+   ↓
+✅ Setup Complete!
+```
+
+---
+
+## 🖥️ Platform-Specific Instructions
+
+### **Windows 🪟**
+
+#### **Method 1: Python (Easiest!)**
+
+1. **Install Python** (if not installed):
+   - Download: https://www.python.org/downloads/
+   - Check "Add Python to PATH" during installation
+
+2. **Run setup:**
+   ```cmd
+   python scripts/setup.py
+   ```
+
+#### **Method 2: Batch File**
+
+1. **Install Git for Windows**:
+   - Download: https://git-scm.com/download/win
+   - Install with default options (includes Git Bash)
+
+2. **Run setup:**
+   ```cmd
+   scripts\setup.bat
+   ```
+
+#### **Method 3: WSL (Windows Subsystem for Linux)**
+
+1. **Install WSL:**
+
+   ```powershell
+   # Run in PowerShell as Administrator
+   wsl --install
+   ```
+
+2. **Restart computer**
+
+3. **Open Ubuntu and run:**
+   ```bash
+   cd /mnt/c/path/to/DSA
+   ./scripts/setup.sh
+   ```
+
+---
+
+### **macOS 🍎**
+
+#### **Prerequisites:**
+
+Install Xcode Command Line Tools:
+
+```bash
+xcode-select --install
+```
+
+#### **Setup:**
+
+**Option 1: Python (Pre-installed)**
+
+```bash
+python3 scripts/setup.py
+```
+
+**Option 2: Shell Script**
+
+```bash
+./scripts/setup.sh
+```
+
+---
+
+### **Linux 🐧**
+
+#### **Prerequisites:**
+
+Install g++ if not present:
+
+```bash
+# Ubuntu/Debian
+sudo apt update
+sudo apt install g++ make
+
+# Fedora
+sudo dnf install gcc-c++ make
+
+# Arch
+sudo pacman -S gcc make
+```
+
+#### **Setup:**
+
+**Option 1: Python**
+
+```bash
+python3 scripts/setup.py
+```
+
+**Option 2: Shell Script**
+
+```bash
+./scripts/setup.sh
+```
+
+---
+
+## 💻 IDE Configuration
+
+### **Kiro IDE** (Recommended)
+
+Kiro IDE is fully configured out of the box! Just open the repository:
 
 ```bash
 kiro .
 ```
 
-**That's it! Everything will work automatically!** 🎉
+**Features:**
+
+- ✅ IntelliSense (auto-completion)
+- ✅ Format on save
+- ✅ Error detection
+- ✅ Code snippets (30+)
+- ✅ One-click run
+
+**After setup:**
+
+1. Open any `.cpp` file
+2. Type `std::` - see auto-completion ✅
+3. Press Cmd/Ctrl + S - auto-format ✅
+4. Click ▶️ or press Ctrl + Alt + N to run ✅
 
 ---
 
-## ✨ What You Get:
+### **VS Code**
 
-### IntelliSense (Auto-completion)
+#### **Install Extensions:**
 
-- Type `std::` and see suggestions
-- Hover over code for documentation
-- Real-time error detection
+The repository includes recommended extensions. VS Code will prompt you to install them.
 
-### Auto-Formatting
+**Manual installation:**
 
-- Press **Cmd + S** (Save) - code auto-formats
-- Consistent code style
-- Based on Google C++ Style Guide
+```bash
+code --install-extension llvm-vs-code-extensions.vscode-clangd
+code --install-extension xaver.clang-format
+```
 
-### Code Snippets
+#### **Configuration:**
 
-- `cpp` + Tab → Full C++ boilerplate
-- `if`, `for`, `while` + Tab → Control structures
-- 30+ shortcuts available
+All settings are in `.vscode/settings.json` (already configured):
 
-### Error Detection
+- ✅ IntelliSense via clangd
+- ✅ Format on save
+- ✅ Auto-completion
+- ✅ Error detection
 
-- Red squiggles for errors
-- Warnings and suggestions
-- Compile-time error checking
+#### **Code Snippets:**
+
+Type shortcuts and press Tab:
+
+- `cpp` → Full C++ boilerplate
+- `for` → For loop
+- `if` → If statement
+- `vec` → Vector declaration
+
+See all: [.vscode/SNIPPETS.md](../.vscode/SNIPPETS.md)
 
 ---
 
-## 📋 Prerequisites
+### **Other IDEs**
 
-### macOS (Recommended)
+#### **CLion:**
 
-- **Xcode Command Line Tools**
+1. Open project folder
+2. CLion auto-detects CMake/Makefile
+3. Configure toolchain (Settings → Build → Toolchains)
 
-  ```bash
-  xcode-select --install
-  ```
+#### **Vim/Neovim:**
 
-- **Homebrew** (if not installed)
+Use clangd LSP:
 
-  ```bash
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  ```
-
-- **Kiro IDE** (Download from [kiro.ai](https://kiro.ai))
-
-### Linux
-
-- **GCC/G++**
-
-  ```bash
-  sudo apt-get install build-essential  # Ubuntu/Debian
-  sudo yum install gcc-c++              # CentOS/RHEL
-  ```
-
-- **LLVM/clangd**
-  ```bash
-  sudo apt-get install clangd-12  # Ubuntu/Debian
-  ```
-
-### Windows
-
-- **MinGW-w64** or **MSVC**
-- **LLVM** (Download from [llvm.org](https://llvm.org))
-
----
-
-## 🔧 Manual Setup (If Script Fails)
-
-### 1. Install LLVM/clangd
-
-```bash
-# macOS
-brew install llvm
-
-# Linux
-sudo apt-get install clangd-12
-
-# Windows
-# Download from https://llvm.org
+```vim
+" Add to your config
+Plug 'neoclide/coc.nvim'
+" Install clangd: :CocInstall coc-clangd
 ```
 
-### 2. Install clang-format
+#### **Emacs:**
 
-```bash
-# macOS
-brew install clang-format
+Use lsp-mode with clangd:
 
-# Linux
-sudo apt-get install clang-format
-
-# Windows
-# Included with LLVM
-```
-
-### 3. Install Kiro Extensions
-
-```bash
-kiro --install-extension llvm-vs-code-extensions.vscode-clangd
-```
-
-### 4. Restart Kiro
-
-```bash
-# Quit Kiro (Cmd + Q)
-# Reopen Kiro
-kiro .
+```elisp
+(use-package lsp-mode
+  :hook (c++-mode . lsp))
 ```
 
 ---
 
-## ✅ Verify Setup
+## 🧪 Testing Your Setup
 
-After setup, test these features:
+### **Test 1: Compile and Run**
 
-### Test 1: IntelliSense
+```bash
+./scripts/cpp C++/01_Basics/FirstCode.cpp
+```
+
+**Expected:** Program compiles and runs ✅
+
+---
+
+### **Test 2: Git Hooks**
+
+```bash
+# Make a change
+echo "// test" >> test.cpp
+
+# Commit
+git add .
+git commit -m "Test commit"
+```
+
+**Expected:** Beautiful commit message with emojis ✅
+
+---
+
+### **Test 3: Code Formatting**
+
+```bash
+./scripts/format.sh
+```
+
+**Expected:** All files formatted ✅
+
+---
+
+### **Test 4: IntelliSense (In IDE)**
 
 1. Open any `.cpp` file
 2. Type `std::`
-3. ✅ Should see auto-completion suggestions
+3. Should see auto-completion suggestions
 
-### Test 2: Formatting
-
-1. Make code messy: `int main(){int x=10;return 0;}`
-2. Press **Cmd + S** (Save)
-3. ✅ Should auto-format
-
-### Test 3: Error Detection
-
-1. Type: `int x = "hello";`
-2. ✅ Should see red squiggle
-
-### Test 4: Code Snippets
-
-1. Type `cpp` and press **Tab**
-2. ✅ Should generate C++ boilerplate
+**Expected:** Auto-completion works ✅
 
 ---
 
-## 📚 Documentation
+### **Test 5: Format on Save (In IDE)**
 
-- **[SNIPPETS.md](.vscode/SNIPPETS.md)** - All code snippets (30+)
-- **[KIRO_FINAL_SETUP.md](KIRO_FINAL_SETUP.md)** - Detailed Kiro setup
-- **[Variables Guide](C++/Variables/README.md)** - Learn about variables
-- **[Operators Guide](C++/Operators/README.md)** - All C++ operators
-- **[Input/Output Guide](C++/Inputs/README.md)** - I/O operations
-- **[Conditional Statements](C++/Conditional_Stmt/README.md)** - If, switch, etc.
+1. Open any `.cpp` file
+2. Make it messy (remove indentation)
+3. Press Cmd/Ctrl + S to save
 
----
-
-## 🎯 Keyboard Shortcuts
-
-| Action                 | Shortcut                       |
-| ---------------------- | ------------------------------ |
-| **Auto-complete**      | Type and wait, or Ctrl + Space |
-| **Format Document**    | Shift + Option + F             |
-| **Save (auto-format)** | Cmd + S                        |
-| **Go to Definition**   | Cmd + Click or F12             |
-| **Find References**    | Shift + F12                    |
-| **Rename Symbol**      | F2                             |
+**Expected:** Code auto-formats ✅
 
 ---
 
-## 🛠️ Troubleshooting
+## 🆘 Troubleshooting
 
-### Issue: IntelliSense not working
+### **Issue: "python: command not found"**
 
 **Solution:**
 
-1. Restart Kiro (Cmd + Q, then reopen)
-2. Wait 10-20 seconds after opening file (clangd indexing)
-3. Check Output panel (View → Output → Select "clangd")
+- Try `python3 scripts/setup.py` instead
+- Or install Python: https://www.python.org/
 
-### Issue: Format on save not working
+---
+
+### **Issue: "bash: command not found" (Windows)**
 
 **Solution:**
 
-1. Verify clang-format is installed: `clang-format --version`
-2. Check settings: `.vscode/settings.json` has `"editor.formatOnSave": true`
-3. Restart Kiro
+- Install Git for Windows: https://git-scm.com/download/win
+- Or use `python scripts/setup.py` instead
 
-### Issue: Extensions not installed
+---
+
+### **Issue: "Permission denied"**
 
 **Solution:**
 
 ```bash
-# List installed extensions
-kiro --list-extensions
-
-# Install clangd extension
-kiro --install-extension llvm-vs-code-extensions.vscode-clangd
+chmod +x scripts/setup.sh scripts/setup.py
+chmod +x scripts/*.sh
 ```
 
-### Issue: Compiler not found
+---
+
+### **Issue: "g++: command not found"**
+
+**Solution:**
+
+- **macOS:** `xcode-select --install`
+- **Linux:** `sudo apt install g++`
+- **Windows:** Install MinGW or use WSL
+
+---
+
+### **Issue: "clangd not found"**
+
+**Solution:**
+
+The setup script will try to install it. If it fails:
+
+- **macOS:** `brew install llvm`
+- **Linux:** `sudo apt install clangd`
+- **Windows:** Download from https://releases.llvm.org/
+
+---
+
+### **Issue: IntelliSense not working**
+
+**Solution:**
+
+1. Make sure clangd is installed: `clangd --version`
+2. Restart your IDE
+3. Check `.vscode/settings.json` exists
+4. Run setup again: `python scripts/setup.py`
+
+---
+
+### **Issue: Format on save not working**
+
+**Solution:**
+
+1. Make sure clang-format is installed: `clang-format --version`
+2. Check IDE settings for "Format on Save"
+3. Verify `.clang-format` file exists in root
+
+---
+
+### **Issue: Git hooks not working**
 
 **Solution:**
 
 ```bash
-# Verify compiler
-clang++ --version  # macOS
-g++ --version      # Linux
+# Reinstall hooks
+./scripts/install_hooks.sh
 
-# Install if missing
-xcode-select --install  # macOS
-sudo apt-get install build-essential  # Linux
+# Verify hooks exist
+ls -la .git/hooks/pre-commit .git/hooks/post-commit
+
+# Make them executable
+chmod +x .git/hooks/pre-commit .git/hooks/post-commit
 ```
-
----
-
-## 🎓 Learning Path
-
-1. **Start with basics:**
-   - [Variables](C++/Variables/README.md)
-   - [Operators](C++/Operators/README.md)
-   - [Input/Output](C++/Inputs/README.md)
-
-2. **Control flow:**
-   - [Conditional Statements](C++/Conditional_Stmt/README.md)
-   - Loops (coming soon)
-
-3. **Data structures:**
-   - Arrays
-   - Linked Lists
-   - Trees
-   - Graphs
-
-4. **Algorithms:**
-   - Sorting
-   - Searching
-   - Dynamic Programming
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! To contribute:
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Format code: `./format.sh`
-5. Submit a pull request
-
----
-
-## 📝 Configuration Files
-
-This repository includes:
-
-- **`.vscode/settings.json`** - Editor and clangd configuration
-- **`.vscode/c_cpp_properties.json`** - C++ IntelliSense settings
-- **`.vscode/extensions.json`** - Recommended extensions
-- **`.vscode/cpp.code-snippets`** - Custom code snippets
-- **`.clang-format`** - Code formatting rules
-- **`compile_commands.json`** - Build configuration for clangd
-
-All these files are tracked in git, so they work automatically when you clone!
-
----
-
-## 🎯 What Makes This Repo Special
-
-✅ **Zero Configuration** - Clone and start coding  
-✅ **IntelliSense** - Auto-completion out of the box  
-✅ **Auto-Formatting** - Code formats on save  
-✅ **30+ Snippets** - Quick code generation  
-✅ **Comprehensive Guides** - Learn while coding  
-✅ **Cross-Platform** - Works on macOS, Linux, Windows
-
----
-
-## 🆘 Need Help?
-
-1. Check [KIRO_FINAL_SETUP.md](KIRO_FINAL_SETUP.md) for detailed setup
-2. Check [TROUBLESHOOTING.md](.vscode/TROUBLESHOOTING.md) for common issues
-3. Open an issue on GitHub
-4. Check Output panel in Kiro (View → Output → clangd)
 
 ---
 
 ## ✅ Success Checklist
 
-- [ ] Repository cloned
-- [ ] Setup script run (`./setup.sh`)
-- [ ] Kiro opened
-- [ ] IntelliSense working (`std::` shows suggestions)
-- [ ] Format on save working (Cmd + S formats code)
-- [ ] Snippets working (`cpp` + Tab generates code)
-- [ ] Error detection working (red squiggles appear)
+After setup, verify:
+
+- [ ] Can compile and run: `./scripts/cpp C++/01_Basics/FirstCode.cpp`
+- [ ] Git hooks installed: `ls -la .git/hooks/`
+- [ ] Scripts executable: `ls -la scripts/`
+- [ ] IntelliSense works (type `std::` in IDE)
+- [ ] Format on save works (Cmd/Ctrl + S)
+- [ ] Git commit shows beautiful messages
 
 ---
 
-## 🎉 You're Ready!
+## 🎯 What You Can Do Now
 
-Everything is configured. Just:
+### **Quick Commands:**
 
-1. Clone the repo
-2. Run `./setup.sh`
-3. Open in Kiro
-4. Start coding!
+```bash
+# Compile and run (shortest way)
+./scripts/cpp file.cpp
 
-**Happy Learning! 🚀**
+# Detailed run with status messages
+./scripts/run.sh file.cpp
+
+# Using Makefile
+make run FILE=file.cpp
+
+# Format all code
+./scripts/format.sh
+
+# Check for executables
+./scripts/check_executables.sh
+```
+
+### **Start Learning:**
+
+1. Read [C++/01_Basics/README.md](../C++/01_Basics/README.md)
+2. Try examples in each folder
+3. Practice with loop problems
+4. Create your own patterns
+
+### **Make a Commit:**
+
+```bash
+git add .
+git commit -m "Your message"
+```
+
+See beautiful commit messages with emojis! 🎉
 
 ---
 
-## 📊 Repository Stats
+## 📚 Additional Resources
 
-- **Language:** C++17
-- **Compiler:** clang++ / g++
-- **IDE:** Kiro (VS Code-based)
-- **IntelliSense:** clangd
-- **Formatter:** clang-format
-- **Style:** Google C++ Style Guide (4-space indent)
+- 🎣 [Git Hooks Guide](GIT_HOOKS_GUIDE.md) - Beautiful commit messages
+- ⚡ [Quick Run Guide](QUICK_RUN_GUIDE.md) - Compile & run methods
+- 🎨 [Formatting Guide](FORMATTING.md) - Code formatting
+- 🔧 [Troubleshooting](TROUBLESHOOTING.md) - Common issues
+- 📖 [Quick Reference](QUICK_REFERENCE.md) - Command cheat sheet
 
 ---
 
-**Made with ❤️ for DSA learners**
+## 🎊 Summary
+
+**Three ways to set up:**
+
+1. **🐍 Python:** `python scripts/setup.py` (Works everywhere!)
+2. **🐚 Shell:** `./scripts/setup.sh` (macOS/Linux)
+3. **🪟 Batch:** `scripts\setup.bat` (Windows)
+
+**All methods install:**
+
+- ✅ Development tools (clangd, clang-format)
+- ✅ Git hooks (beautiful messages)
+- ✅ IDE configuration
+- ✅ Scripts (all executable)
+
+**Result:** Complete C++ development environment! 🌍
+
+---
+
+**Happy Coding!** 🚀💪
