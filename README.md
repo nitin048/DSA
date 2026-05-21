@@ -51,11 +51,13 @@ This repository is fully configured for modern C++ development:
 - **Quick compile & run** - `./scripts/cpp file.cpp` (easiest way!)
 - **Detailed run script** - `./scripts/run.sh file.cpp`
 - **One-click run** - Click ▶️ or press Ctrl + Alt + N in Kiro/VS Code
+- **Beautiful git hooks** - Emoji-rich commit messages 🎉
 - **Error highlighting** - Red squiggles for errors
 - **Code navigation** - Find references, rename symbols
 - **Format script** - `./scripts/format.sh` to format all files
 
-📖 **Quick Run Guide:** [docs/QUICK_RUN_GUIDE.md](docs/QUICK_RUN_GUIDE.md)
+📖 **Quick Run Guide:** [docs/QUICK_RUN_GUIDE.md](docs/QUICK_RUN_GUIDE.md)  
+📖 **Git Hooks Guide:** [docs/GIT_HOOKS_GUIDE.md](docs/GIT_HOOKS_GUIDE.md)
 
 ## 📖 Topics Covered
 
@@ -83,61 +85,99 @@ This repository is fully configured for modern C++ development:
 
 ## 🚀 Getting Started
 
-### Quick Setup (Recommended)
+### 🌍 Universal Setup (Works on ALL Operating Systems!)
 
-**For Kiro IDE users (fully configured!):**
+This repository works on **Windows 🪟, macOS 🍎, and Linux 🐧** with one-command setup! 🎉
 
-1. **Clone this repository**
+#### **Step 1: Clone the Repository**
 
-   ```bash
-   git clone https://github.com/nitin048/DSA.git
-   cd DSA
-   ```
+```bash
+git clone https://github.com/nitin048/DSA.git
+cd DSA
+```
 
-2. **Test it works (no setup needed!)**
+#### **Step 2: Run Universal Setup** (Choose ONE method)
 
-   ```bash
-   ./scripts/cpp C++/01_Basics/FirstCode.cpp
-   ```
+**🐍 Method 1: Python Script** (Recommended - Works Everywhere!)
 
-   **It works!** ✅ You can start coding immediately!
+```bash
+python scripts/setup.py
+```
 
-3. **Optional: Full IDE setup (IntelliSense + Format-on-save)**
+or
 
-   ```bash
-   chmod +x scripts/setup.sh
-   ./scripts/setup.sh
-   ```
+```bash
+python3 scripts/setup.py
+```
 
-4. **Open in Kiro**
-   ```bash
-   kiro .
-   ```
+**🐚 Method 2: Shell Script** (macOS/Linux)
 
-**That's it!** IntelliSense, auto-formatting, and all features work automatically! 🎉
+```bash
+./scripts/setup.sh
+```
 
-📖 **Detailed setup guide**: [docs/SETUP.md](docs/SETUP.md)  
-📖 **Kiro IDE guide**: [docs/KIRO_SETUP.md](docs/KIRO_SETUP.md)  
-📖 **Clone & Test guide**: [docs/CLONE_AND_TEST.md](docs/CLONE_AND_TEST.md)
+**🪟 Method 3: Batch File** (Windows)
 
-### For VS Code Users
+```cmd
+scripts\setup.bat
+```
 
-This repository also works with VS Code:
+Or navigate to `scripts/` folder and **double-click** `setup.bat` on Windows!
 
-1. Clone the repository
-2. Open in VS Code: `code .`
-3. Install recommended extensions when prompted
-4. Reload VS Code
+#### **Step 3: Start Coding!** 🎊
 
-📖 **VS Code setup guide**: [docs/VSCODE_SETUP.md](docs/VSCODE_SETUP.md)
+```bash
+# Test it works
+./scripts/cpp C++/01_Basics/FirstCode.cpp
 
-### For Other Editors
+# Open in your IDE
+kiro .    # For Kiro IDE
+code .    # For VS Code
+```
 
-1. Clone this repository
-2. Navigate through the topics in order
-3. Read the explanations and study the implementations
-4. Practice with the provided problems
-5. Try to solve problems on your own before checking solutions
+**That's it!** ✅ IntelliSense, auto-formatting, git hooks, and all features work automatically! 🎉
+
+---
+
+### 📚 Setup Guides
+
+- 🌍 **[Universal Setup Summary](docs/UNIVERSAL_SETUP_SUMMARY.md)** - Quick overview of all setup methods
+- 🌐 **[Cross-Platform Setup](docs/CROSS_PLATFORM_SETUP.md)** - Detailed guide for all OS
+- 📋 **[Setup Quick Reference](docs/SETUP_QUICK_REFERENCE.md)** - One-page quick reference
+- 🧪 **[Clone & Test](docs/CLONE_AND_TEST.md)** - Testing guide
+- 🎯 **[Main Setup](docs/SETUP.md)** - Original setup guide
+- 💻 **[Kiro IDE Setup](docs/KIRO_SETUP.md)** - Kiro-specific guide
+- 🔧 **[VS Code Setup](docs/VSCODE_SETUP.md)** - VS Code-specific guide
+
+---
+
+### 🎯 What Gets Installed
+
+All setup scripts install:
+
+- ✅ **Development Tools** - clangd, clang-format, LLVM
+- ✅ **Git Hooks** - Beautiful commit messages with emojis 🎉
+- ✅ **IDE Configuration** - IntelliSense, auto-formatting
+- ✅ **Scripts** - Quick compile & run commands
+
+---
+
+### 🚀 Quick Start (No Setup)
+
+Want to try it immediately? Just compile and run:
+
+```bash
+# macOS/Linux
+g++ C++/01_Basics/FirstCode.cpp && ./a.out
+
+# Windows (Git Bash)
+g++ C++/01_Basics/FirstCode.cpp && ./a.out
+
+# Windows (Command Prompt)
+g++ C++/01_Basics/FirstCode.cpp && a.out
+```
+
+Then run the setup script when you're ready for the full experience!
 
 ## 📁 Repository Structure
 
@@ -150,19 +190,37 @@ DSA/
 │   ├── 04_InputOutput/         # Input/Output operations
 │   ├── 05_Typecasting/         # Type conversion
 │   ├── 06_Conditionals/        # If, switch, ternary
-│   └── 07_Loops/               # For, while, do-while 
+│   ├── 07_Loops/               # For, while, do-while
+│   └── 08_Patterns/            # Pattern printing
 │
 ├── docs/                       # All documentation
 │   ├── SETUP.md                # Main setup guide
+│   ├── UNIVERSAL_SETUP_SUMMARY.md  # Universal setup overview
+│   ├── CROSS_PLATFORM_SETUP.md     # Cross-platform guide
+│   ├── SETUP_QUICK_REFERENCE.md    # Quick reference card
+│   ├── CLONE_AND_TEST.md       # Clone testing guide
 │   ├── KIRO_SETUP.md           # Kiro IDE setup
 │   ├── VSCODE_SETUP.md         # VS Code setup
+│   ├── GIT_HOOKS_GUIDE.md      # Git hooks guide
+│   ├── QUICK_RUN_GUIDE.md      # Compile & run guide
 │   ├── FORMATTING.md           # Formatting guide
 │   ├── TROUBLESHOOTING.md      # Troubleshooting
-│   └── CLONE_TEST.md           # Clone testing guide
+│   └── CROSS_PLATFORM_COMPLETE.md  # Implementation summary
 │
 ├── scripts/                    # Utility scripts
-│   ├── setup.sh                # Automated setup
-│   └── format.sh               # Format all files
+│   ├── setup.py                # 🐍 Universal Python setup
+│   ├── setup.sh                # 🐚 Shell setup (macOS/Linux)
+│   ├── setup.bat               # 🪟 Batch setup (Windows)
+│   ├── install_hooks.sh        # Git hooks installer
+│   ├── format.sh               # Code formatter
+│   ├── cpp                     # Quick compile & run
+│   ├── run.sh                  # Detailed compile & run
+│   └── check_executables.sh   # Check for executables
+│
+├── hooks/                      # Git hooks (trackable)
+│   ├── pre-commit              # Pre-commit hook
+│   ├── post-commit             # Post-commit hook
+│   └── README.md               # Hooks documentation
 │
 ├── .vscode/                    # IDE configuration
 │   ├── settings.json           # Editor settings
@@ -173,6 +231,7 @@ DSA/
 ├── .clang-format               # Formatting rules
 ├── .gitignore                  # Git ignore rules
 ├── compile_commands.json       # Build configuration
+├── Makefile                    # Make commands
 └── README.md                   # This file
 ```
 

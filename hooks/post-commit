@@ -1,0 +1,150 @@
+#!/bin/bash
+
+# 🎉 Post-commit hook - Shows beautiful summary after successful commit
+# ✨ This runs automatically after every git commit
+
+# 🎨 Colors
+GREEN='\033[0;32m'
+BLUE='\033[0;34m'
+YELLOW='\033[1;33m'
+CYAN='\033[0;36m'
+MAGENTA='\033[0;35m'
+RED='\033[0;31m'
+BOLD='\033[1m'
+NC='\033[0m' # No Color
+
+# 📊 Get commit information
+COMMIT_HASH=$(git rev-parse --short HEAD)
+COMMIT_MSG=$(git log -1 --pretty=%B)
+BRANCH=$(git branch --show-current)
+AUTHOR=$(git log -1 --pretty=%an)
+DATE=$(git log -1 --pretty=%ad --date=format:'%Y-%m-%d %H:%M:%S')
+
+# 📈 Get file statistics
+FILES_CHANGED=$(git diff --stat HEAD~1 HEAD | tail -1 | awk '{print $1}')
+INSERTIONS=$(git diff --stat HEAD~1 HEAD | tail -1 | awk '{print $4}')
+DELETIONS=$(git diff --stat HEAD~1 HEAD | tail -1 | awk '{print $6}')
+
+# 📁 Get changed files
+CHANGED_FILES=$(git diff --name-only HEAD~1 HEAD)
+
+echo ""
+echo -e "${GREEN}╔════════════════════════════════════════════════════════════════╗${NC}"
+echo -e "${GREEN}║${NC}  ${BOLD}✅ COMMIT SUCCESSFUL! 🎉${NC}                                    ${GREEN}║${NC}"
+echo -e "${GREEN}╚════════════════════════════════════════════════════════════════╝${NC}"
+echo ""
+
+# 📝 Commit details
+echo -e "${CYAN}📝 ${BOLD}Commit Details:${NC}"
+echo -e "   ${BOLD}🔖 Hash:${NC}    ${YELLOW}${COMMIT_HASH}${NC}"
+echo -e "   ${BOLD}🌿 Branch:${NC}  ${MAGENTA}${BRANCH}${NC}"
+echo -e "   ${BOLD}💬 Message:${NC} ${COMMIT_MSG}"
+echo -e "   ${BOLD}👤 Author:${NC}  ${AUTHOR}"
+echo -e "   ${BOLD}📅 Date:${NC}    ${DATE}"
+echo ""
+
+# 📊 Statistics
+echo -e "${CYAN}📊 ${BOLD}Changes Summary:${NC}"
+if [ ! -z "$FILES_CHANGED" ]; then
+    echo -e "   ${GREEN}📦 ${FILES_CHANGED}${NC} file(s) changed"
+    if [ ! -z "$INSERTIONS" ] && [ "$INSERTIONS" != "0" ]; then
+        echo -e "   ${GREEN}➕ ${INSERTIONS}${NC} insertion(s)"
+    fi
+    if [ ! -z "$DELETIONS" ] && [ "$DELETIONS" != "0" ]; then
+        echo -e "   ${RED}➖ ${DELETIONS}${NC} deletion(s)"
+    fi
+else
+    echo -e "   ${YELLOW}⚠️  No changes detected${NC}"
+fi
+echo ""
+
+# 📁 Changed files
+if [ ! -z "$CHANGED_FILES" ]; then
+    echo -e "${CYAN}📁 ${BOLD}Modified Files:${NC}"
+    while IFS= read -r file; do
+        # 🎯 Determine file type and icon
+        if [[ $file == *.cpp ]]; then
+            icon="🔵"
+            type="C++ Source"
+        elif [[ $file == *.h ]] || [[ $file == *.hpp ]]; then
+            icon="🔷"
+            type="Header"
+        elif [[ $file == *.md ]]; then
+            icon="📄"
+            type="Markdown"
+        elif [[ $file == *.sh ]]; then
+            icon="⚙️"
+            type="Script"
+        elif [[ $file == *.json ]]; then
+            icon="📋"
+            type="JSON"
+        elif [[ $file == .gitignore ]]; then
+            icon="🚫"
+            type="Gitignore"
+        elif [[ $file == *.py ]]; then
+            icon="🐍"
+            type="Python"
+        elif [[ $file == *.js ]]; then
+            icon="💛"
+            type="JavaScript"
+        elif [[ $file == *.txt ]]; then
+            icon="📝"
+            type="Text"
+        else
+            icon="📄"
+            type="File"
+        fi
+        echo -e "   ${icon}  ${file}"
+    done <<< "$CHANGED_FILES"
+    echo ""
+fi
+
+# 💡 Tips and suggestions
+TIPS=(
+    "💡 Tip: Use 'git log --oneline' to see commit history 📜"
+    "💡 Tip: Use 'git diff HEAD~1' to see what changed 🔍"
+    "💡 Tip: Use 'git show' to see this commit's details 👀"
+    "💡 Tip: Use 'git push' to push your changes to remote 🚀"
+    "💡 Tip: Use './scripts/check_executables.sh' before committing 🔎"
+    "💡 Tip: Use './scripts/format.sh' to format all files 🎨"
+    "💡 Tip: Use 'git status' to check working directory 📊"
+    "💡 Tip: Use 'git branch' to see all branches 🌿"
+    "💡 Tip: Use 'git log --graph' for visual commit history 🎨"
+    "💡 Tip: Use 'git stash' to save work in progress 💾"
+    "💡 Tip: Use 'git blame <file>' to see who changed what 🔍"
+    "💡 Tip: Use 'git reflog' to see all git actions 📝"
+)
+
+# 🎲 Show random tip
+RANDOM_TIP=${TIPS[$RANDOM % ${#TIPS[@]}]}
+echo -e "${YELLOW}${RANDOM_TIP}${NC}"
+echo ""
+
+# 🔔 Check if there are unpushed commits
+UNPUSHED=$(git log @{u}.. --oneline 2>/dev/null | wc -l | tr -d ' ')
+if [ "$UNPUSHED" -gt "0" ]; then
+    echo -e "${YELLOW}⚠️  You have ${UNPUSHED} unpushed commit(s) 📤${NC}"
+    echo -e "${CYAN}   💻 Run: ${BOLD}git push${NC} to push to remote 🚀"
+    echo ""
+fi
+
+# 🎊 Success message with random celebration
+CELEBRATIONS=(
+    "🎉 Great work! Keep coding! 💪"
+    "🌟 Awesome commit! You're on fire! 🔥"
+    "🚀 Amazing! Keep up the great work! ⭐"
+    "💯 Perfect! You're doing great! 🎯"
+    "🎨 Beautiful code! Keep it up! ✨"
+    "🏆 Excellent work! You're a star! 🌟"
+    "💎 Brilliant! Keep pushing forward! 🚀"
+    "🎪 Fantastic! You're crushing it! 💪"
+    "🌈 Wonderful! Keep the momentum! 🎉"
+    "⚡ Superb! You're unstoppable! 🔥"
+)
+
+RANDOM_CELEBRATION=${CELEBRATIONS[$RANDOM % ${#CELEBRATIONS[@]}]}
+
+echo -e "${GREEN}╔════════════════════════════════════════════════════════════════╗${NC}"
+echo -e "${GREEN}║${NC}  ${BOLD}${RANDOM_CELEBRATION}${NC}                ${GREEN}║${NC}"
+echo -e "${GREEN}╚════════════════════════════════════════════════════════════════╝${NC}"
+echo ""
