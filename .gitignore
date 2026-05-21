@@ -1,15 +1,28 @@
-# C++ Compiled Files
+# ============================================
+# COMPREHENSIVE .GITIGNORE FOR C++ DSA PROJECT
+# ============================================
+# This file ignores all common temporary, compiled, and system files
+# Last updated: 2026-05-20
+
+# ============================================
+# C/C++ COMPILED FILES
+# ============================================
+
+# Object files
 *.o
 *.obj
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+*.ko
+*.elf
+*.slo
+*.lo
+
+# Precompiled Headers
+*.gch
+*.pch
 
 # Compiled Dynamic libraries
 *.so
+*.so.*
 *.dylib
 *.dll
 
@@ -23,17 +36,28 @@
 *.exe
 *.out
 *.app
+*.i*86
+*.x86_64
+*.hex
 a.out
 **/a.out
 
-# ============================================
-# ROBUST SOLUTION: Ignore ALL executables in C++ folders
-# ============================================
-# This ignores any file without an extension in C++ directory
-# Matches: whileLoop, squarePattern, 01_prblm, etc.
-# Does NOT match: file.cpp, file.h, README.md, etc.
+# Linker output
+*.ilk
+*.map
+*.exp
 
-# Pattern 1: Files ending with common patterns
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# ============================================
+# C++ PROJECT EXECUTABLES (NO EXTENSION)
+# ============================================
+
+# Pattern-based ignores
 C++/**/*Loop
 C++/**/*loop  
 C++/**/*Pattern
@@ -41,10 +65,11 @@ C++/**/*pattern
 C++/**/*_prblm
 C++/**/*_problem
 C++/**/*_test
+C++/**/*_solution
 C++/**/*Stmt
 C++/**/*stmt
 
-# Pattern 2: Specific known executables
+# Specific executables (auto-generated from .cpp files)
 C++/**/whileLoop
 C++/**/forLoop
 C++/**/doWhileLoop
@@ -67,30 +92,15 @@ C++/**/implicitTypeCasting
 C++/**/explicitTypeCasting
 C++/**/FirstCode
 
-# Pattern 3: Number-based problem files
+# Number-based problem files
 C++/**/[0-9][0-9]_prblm
 C++/**/[0-9][0-9]_problem
+C++/**/[0-9][0-9][0-9]_prblm
+C++/**/[0-9][0-9][0-9]_problem
 
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Object files
-*.slo
-*.lo
-*.ko
-*.elf
-
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+# ============================================
+# BUILD SYSTEMS
+# ============================================
 
 # CMake
 CMakeLists.txt.user
@@ -102,9 +112,37 @@ Makefile
 cmake_install.cmake
 install_manifest.txt
 CTestTestfile.cmake
-_deps
+_deps/
 build/
 cmake-build-*/
+out/
+
+# Make
+*.d
+*.mk
+
+# Ninja
+.ninja_deps
+.ninja_log
+build.ninja
+
+# Meson
+builddir/
+meson-logs/
+meson-private/
+
+# Bazel
+bazel-*
+
+# Buck
+buck-out/
+.buckconfig.local
+.buckd/
+.buckversion
+
+# ============================================
+# IDEs AND EDITORS
+# ============================================
 
 # Visual Studio Code
 .vscode/*
@@ -114,8 +152,14 @@ cmake-build-*/
 !.vscode/c_cpp_properties.json
 !.vscode/settings.json
 !.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
 *.code-workspace
 .history/
+
+# Code Runner temporary files
+**/tempCodeRunnerFile.*
+tempCodeRunnerFile.*
 
 # Visual Studio
 .vs/
@@ -129,11 +173,36 @@ cmake-build-*/
 *.sln.docstates
 *.VC.db
 *.VC.opendb
+*.VC.VC.opendb
 ipch/
 *.opensdf
 *.sdf
 *.cachefile
+*.aps
+*.ncb
+*.opendb
+*.opensdf
+*.sdf
+*.cachefile
+*.VC.db
 *.VC.VC.opendb
+x64/
+x86/
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio 2015/2017 cache/options directory
+.vs/
+
+# Rider
+.idea/
+*.sln.iml
 
 # CLion
 .idea/
@@ -149,6 +218,11 @@ DerivedData/
 *.ipa
 *.dSYM.zip
 *.dSYM
+*.xccheckout
+*.xcscmblueprint
+
+# AppCode
+.idea/
 
 # Code::Blocks
 *.layout
@@ -159,6 +233,8 @@ DerivedData/
 .cproject
 .project
 .settings/
+.metadata/
+.recommenders/
 
 # NetBeans
 nbproject/
@@ -185,6 +261,48 @@ Makefile*
 .qmake.cache
 .qmake.stash
 
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# Vim
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+Session.vim
+Sessionx.vim
+.netrwhist
+*~
+tags
+[._]*.un~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Atom
+.atom/
+
+# JetBrains IDEs (IntelliJ, CLion, etc.)
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+.idea_modules/
+
+# ============================================
+# OPERATING SYSTEMS
+# ============================================
+
 # macOS
 .DS_Store
 .AppleDouble
@@ -203,6 +321,7 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+.localized
 
 # Windows
 Thumbs.db
@@ -226,54 +345,115 @@ $RECYCLE.BIN/
 .Trash-*
 .nfs*
 
+# ============================================
+# TEMPORARY AND BACKUP FILES
+# ============================================
+
 # Backup files
 *.bak
+*.backup
+*.old
+*.orig
+*.rej
 *.swp
 *.swo
-*~
+*.swn
 *.tmp
 *.temp
+*~
+
+# Patch files
+*.patch
+*.diff
+
+# ============================================
+# LOGS AND DATABASES
+# ============================================
 
 # Log files
 *.log
+*.log.*
+logs/
+*.tlog
 
-# Test files (uncomment if you want to ignore test executables)
-# test
-# tests
-# *_test
-# *_tests
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+*.db-shm
+*.db-wal
 
-# Input/Output files for testing
+# ============================================
+# TESTING AND COVERAGE
+# ============================================
+
+# Test executables
+test
+tests
+*_test
+*_tests
+test_*
+tests_*
+
+# Input/Output test files
 *.in
 *.out
 input.txt
 output.txt
+test_input.txt
+test_output.txt
 
-# Profiling data
+# Coverage files
 *.gcda
 *.gcno
 *.gcov
+*.lcov
+coverage/
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+
+# Profiling data
 gmon.out
 callgrind.out.*
 perf.data
 perf.data.old
+*.prof
 
 # Valgrind
 *.memcheck
 vgcore.*
+valgrind-out.*
 
-# Core dumps
-core
-core.*
+# Sanitizers
+*.san
 
-# Package managers
+# ============================================
+# PACKAGE MANAGERS
+# ============================================
+
+# Conan
 conan.lock
 conanbuildinfo.*
 conaninfo.txt
 graph_info.json
+conanfile.pyc
 
 # vcpkg
 vcpkg_installed/
+vcpkg.json.user
+
+# Hunter
+_3rdParty/
+
+# CPM
+CPM_modules/
+
+# ============================================
+# DEPENDENCIES AND LIBRARIES
+# ============================================
 
 # Dependencies
 deps/
@@ -281,21 +461,267 @@ dependencies/
 third_party/
 external/
 vendor/
+lib/
+libs/
+node_modules/
 
-# Documentation generated files
+# ============================================
+# DOCUMENTATION
+# ============================================
+
+# Generated documentation
 docs/_build/
 docs/html/
 docs/latex/
+docs/xml/
+docs/man/
 Doxyfile.bak
 doxygen_sqlite3.db
+doxygen_warnings.txt
+html/
+latex/
+xml/
 
-# Jupyter Notebooks (if using for notes)
+# Sphinx
+_build/
+_static/
+_templates/
+
+# ============================================
+# VERSION CONTROL
+# ============================================
+
+# Git
+*.orig
+*.BACKUP.*
+*.BASE.*
+*.LOCAL.*
+*.REMOTE.*
+*_BACKUP_*.txt
+*_BASE_*.txt
+*_LOCAL_*.txt
+*_REMOTE_*.txt
+
+# SVN
+.svn/
+
+# Mercurial
+.hg/
+.hgignore
+.hgsigs
+.hgsubstate
+.hgtags
+
+# ============================================
+# ARCHIVES AND COMPRESSED FILES
+# ============================================
+
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+*.bz2
+*.xz
+*.gz
+*.iso
+*.jar
+*.war
+*.ear
+*.sar
+*.class
+
+# ============================================
+# MEDIA FILES (OPTIONAL - UNCOMMENT IF NEEDED)
+# ============================================
+
+# Images
+# *.jpg
+# *.jpeg
+# *.png
+# *.gif
+# *.bmp
+# *.ico
+# *.svg
+# *.webp
+
+# Videos
+# *.mp4
+# *.avi
+# *.mov
+# *.wmv
+# *.flv
+# *.mkv
+
+# Audio
+# *.mp3
+# *.wav
+# *.flac
+# *.aac
+# *.ogg
+
+# ============================================
+# JUPYTER NOTEBOOKS
+# ============================================
+
 .ipynb_checkpoints/
 *.ipynb
+.jupyter/
 
-# Misc
-.cache/
-*.orig
+# ============================================
+# PYTHON (IF USING FOR SCRIPTS)
+# ============================================
 
-# Build cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+.pytest_cache/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# ============================================
+# NODE.JS (IF USING FOR TOOLS)
+# ============================================
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# ============================================
+# RUST (IF USING)
+# ============================================
+
+target/
+Cargo.lock
+**/*.rs.bk
+
+# ============================================
+# JAVA (IF USING)
+# ============================================
+
+*.class
+*.jar
+*.war
+*.ear
+.gradle/
+gradle/
+gradlew
+gradlew.bat
+
+# ============================================
+# SECURITY AND SECRETS
+# ============================================
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+*.env
+
+# Secrets
+secrets/
+*.key
+*.pem
+*.p12
+*.pfx
+*.cer
+*.crt
+*.der
+id_rsa
+id_rsa.pub
+
+# API keys
+*api_key*
+*apikey*
+*secret*
+*password*
+*credentials*
+
+# ============================================
+# CLOUD AND DEPLOYMENT
+# ============================================
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# Kubernetes
+*.kubeconfig
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+
+# ============================================
+# MISC
+# ============================================
+
+# Cache directories
 .cache/
+cache/
+*.cache
+
+# Temporary directories
+tmp/
+temp/
+.tmp/
+.temp/
+
+# Lock files
+*.lock
+.lock
+
+# PID files
+*.pid
+
+# Socket files
+*.sock
+
+# Core dumps
+core
+core.*
+*.core
+
+# Crash logs
+crash.log
+*.crash
+
+# Memory dumps
+*.dmp
+
+# ============================================
+# PROJECT SPECIFIC
+# ============================================
+
+# Custom build output
+output/
+bin/
+obj/
+
+# Custom test files
+my_test*
+debug_*
+
+# Personal notes
+notes.txt
+TODO.txt
+NOTES.md
+
+# ============================================
+# END OF .GITIGNORE
+# ============================================

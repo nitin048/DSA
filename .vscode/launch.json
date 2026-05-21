@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/nitinpradhan/Learning/DSA/C++/07_Loops",
+      "program": "/Users/nitinpradhan/Learning/DSA/C++/07_Loops/build/Debug/outDebug"
+    }
+  ]
+}
