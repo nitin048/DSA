@@ -16,7 +16,7 @@ NC='\033[0m' # No Color
 # 📊 Get commit information
 COMMIT_HASH=$(git rev-parse --short HEAD)
 COMMIT_MSG=$(git log -1 --pretty=%B)
-BRANCH=$(git branch --show-current)
+BRANCH=$(git rev-parse --abbrev-ref HEAD 2>/dev/null || echo "unknown")
 AUTHOR=$(git log -1 --pretty=%an)
 DATE=$(git log -1 --pretty=%ad --date=format:'%Y-%m-%d %H:%M:%S')
 
