@@ -147,6 +147,7 @@ code .    # For VS Code
 - 💻 **[Git Commands Guide](docs/GIT_COMMANDS.md)** - Complete Git reference
 - 🏃 **[Quick Run Guide](docs/QUICK_RUN_GUIDE.md)** - Compile & run methods
 - 🚫 **[Gitignore Guide](docs/GITIGNORE.md)** - How executables are handled
+- 🎯 **[Executable Ignore Solution](docs/EXECUTABLE_IGNORE_SOLUTION.md)** - Auto-ignore all executables
 - 🎨 **[Formatting Guide](docs/FORMATTING.md)** - Code formatting
 - 🆘 **[Troubleshooting](docs/TROUBLESHOOTING.md)** - Common issues & solutions
 
@@ -192,7 +193,8 @@ DSA/
 │   ├── 05_Typecasting/         # Type conversion
 │   ├── 06_Conditionals/        # If, switch, ternary
 │   ├── 07_Loops/               # For, while, do-while
-│   └── 08_Patterns/            # Pattern printing
+│   ├── 08_Patterns/            # Pattern printing
+│   └── 09_Functions/           # Functions and methods
 │
 ├── docs/                       # All documentation
 │   ├── SETUP.md                # Main setup guide
@@ -245,6 +247,39 @@ Each topic includes comprehensive guides:
 - 📖 [Input/Output Guide](C++/04_InputOutput/README.md)
 - 📖 [Type Casting Guide](C++/05_Typecasting/README.md)
 - 📖 [Conditionals Guide](C++/06_Conditionals/README.md)
+- 📖 [Loops Guide](C++/07_Loops/README.md)
+- 📖 [Patterns Guide](C++/08_Patterns/README.md)
+- 📖 [Functions Guide](C++/09_Functions/README.md) - **Includes Memory Explanation!** 🧠
+
+---
+
+## 🎯 Interview Preparation
+
+**Quick revision guide for technical interviews!** 💼
+
+### **📚 Complete Interview Prep:**
+
+- 🎯 **[Interview Preparation Guide](Interview-Prep/README.md)** - Main guide
+- 💻 **C++ Fundamentals** - Basics, Functions, Pointers, OOP, STL
+- 📊 **Data Structures** - Arrays, Trees, Graphs, Hash Tables, Heaps
+- 🧮 **Algorithms** - Sorting, Searching, DP, Greedy, Backtracking
+- 🎯 **Problem Patterns** - Two Pointers, Sliding Window, BFS/DFS
+- ⏱️ **[Complexity Analysis](Interview-Prep/33-Complexity-Analysis.md)** - Big-O notation
+- 💡 **Top 50 Problems** - Must-do questions
+- 🎓 **Interview Tips** - How to ace interviews
+
+### **🔥 Quick Links:**
+
+- [C++ Basics Cheat Sheet](Interview-Prep/01-CPP-Basics.md)
+- [Time & Space Complexity](Interview-Prep/33-Complexity-Analysis.md)
+- [Common Interview Questions](Interview-Prep/34-Common-Questions.md)
+- [Interview Tips](Interview-Prep/35-Interview-Tips.md)
+
+### **📅 Study Plans:**
+
+- 4-week comprehensive plan
+- 1-week quick revision
+- 1-day before interview checklist
 
 ## 💡 How to Use This Repository
 
