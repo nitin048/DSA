@@ -144,6 +144,7 @@ code .    # For VS Code
 - 🚀 **[Complete Setup Guide](docs/SETUP.md)** - Everything you need to get started
 - ⚡ **[Quick Reference](docs/QUICK_REFERENCE.md)** - Command cheat sheet
 - 🎣 **[Git Hooks Guide](docs/GIT_HOOKS_GUIDE.md)** - Beautiful commit messages
+- 💻 **[Git Commands Guide](docs/GIT_COMMANDS.md)** - Complete Git reference
 - 🏃 **[Quick Run Guide](docs/QUICK_RUN_GUIDE.md)** - Compile & run methods
 - 🚫 **[Gitignore Guide](docs/GITIGNORE.md)** - How executables are handled
 - 🎨 **[Formatting Guide](docs/FORMATTING.md)** - Code formatting
