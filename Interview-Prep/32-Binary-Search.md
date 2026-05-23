@@ -1,14 +1,14 @@
-# 🔍 Modified Binary Search - Quick Reference
+# 🔍 Binary Search - Quick Reference
 
 **Binary search with a twist!** 🎯
 
 ---
 
-## 📋 What is Modified Binary Search?
+## 📋 What is Binary Search?
 
 ### **Definition:**
 
-Modified Binary Search applies the **binary search principle** to problems beyond simple sorted array search, including rotated arrays, search space problems, and finding boundaries.
+Binary Search applies the **binary search principle** to problems beyond simple sorted array search, including rotated arrays, search space problems, and finding boundaries.
 
 ### **Key Characteristics:**
 
