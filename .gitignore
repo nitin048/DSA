@@ -62,46 +62,41 @@ compile_commands.json
 # C++ PROJECT EXECUTABLES (NO EXTENSION)
 # ============================================
 
-# Pattern-based ignores
-C++/**/*Loop
-C++/**/*loop  
-C++/**/*Pattern
-C++/**/*pattern
-C++/**/*_prblm
-C++/**/*_problem
-C++/**/*_test
-C++/**/*_solution
-C++/**/*Stmt
-C++/**/*stmt
+# 🎯 UNIVERSAL SOLUTION: Ignore ALL executables (files without extensions)
+# This works for ANY filename you create!
+# 
+# How it works:
+# 1. Ignore all files in C++ folders
+# 2. But keep files with extensions (.cpp, .md, .txt, etc.)
+# 3. But keep directories
+#
+# This means:
+# ✅ 01-Functions.cpp    → Tracked (has .cpp extension)
+# ❌ 01-Functions        → Ignored (no extension = executable)
+# ✅ 02-Functions.cpp    → Tracked (has .cpp extension)
+# ❌ 02-Functions        → Ignored (no extension = executable)
+# ✅ myProgram.cpp       → Tracked (has .cpp extension)
+# ❌ myProgram           → Ignored (no extension = executable)
+# ✅ README.md           → Tracked (has .md extension)
+# ✅ folder/             → Tracked (is a directory)
 
-# Specific executables (auto-generated from .cpp files)
-C++/**/whileLoop
-C++/**/forLoop
-C++/**/doWhileLoop
-C++/**/nestedLoop
-C++/**/squarePattern
-C++/**/trianglePattern
-C++/**/pyramidPattern
-C++/**/diamondPattern
-C++/**/ifElse
-C++/**/if_else_if
-C++/**/ternaryStmt
-C++/**/calculator
-C++/**/variables
-C++/**/inputs
-C++/**/arithmetic
-C++/**/relational
-C++/**/logical
-C++/**/unary
-C++/**/implicitTypeCasting
-C++/**/explicitTypeCasting
-C++/**/FirstCode
+# Step 1: Ignore everything in C++ folders
+C++/**/*
 
-# Number-based problem files
-C++/**/[0-9][0-9]_prblm
-C++/**/[0-9][0-9]_problem
-C++/**/[0-9][0-9][0-9]_prblm
-C++/**/[0-9][0-9][0-9]_problem
+# Step 2: But DON'T ignore files with ANY extension
+!C++/**/*.*
+
+# Step 3: But DON'T ignore directories (so we can traverse them)
+!C++/**/
+
+# Step 4: But DO ignore common executable extensions (just in case)
+C++/**/*.out
+C++/**/*.exe
+C++/**/*.app
+
+# 🔥 RESULT: This pattern ignores ALL executables regardless of name!
+# Works for: 01-Functions, 02-Functions, myCode, test, anything!
+# No need to manually add each executable name! 🎉
 
 # ============================================
 # BUILD SYSTEMS
