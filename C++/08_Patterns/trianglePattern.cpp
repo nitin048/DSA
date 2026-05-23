@@ -180,27 +180,27 @@
 // GHIJ
 //-------------------------
 // print characters in reverse order
-#include <iostream>
-using namespace std;
+// #include <iostream>
+// using namespace std;
 
-int main() {
-    int n;
-    cout << "Enter a number : " << endl;
-    cin >> n;
+// int main() {
+//     int n;
+//     cout << "Enter a number : " << endl;
+//     cin >> n;
 
-    for (int i = 0; i < n; i++) {
-        // Start from the last character for this row
-        char ch = 'A' + i;  // For row i, last char is 'A' + i
+//     for (int i = 0; i < n; i++) {
+//         // Start from the last character for this row
+//         char ch = 'A' + i;  // For row i, last char is 'A' + i
 
-        for (int j = i + 1; j > 0; j--) {
-            cout << ch;
-            ch--;  // Decrement to go backwards
-        }
+//         for (int j = i + 1; j > 0; j--) {
+//             cout << ch;
+//             ch--;  // Decrement to go backwards
+//         }
 
-        cout << endl;
-    }
-    return 0;
-}
+//         cout << endl;
+//     }
+//     return 0;
+// }
 
 // output
 //  Enter a number :
@@ -209,7 +209,42 @@ int main() {
 //  BA
 //  CBA
 //  DCBA
+//=======================================//
 
+// Inverted trinangle with char
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter a number: ";
+    cin >> n;
+    char ch = 'A';
+    cout << "====================" << endl;
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < i; j++) {
+            cout << " ";
+        }
+
+        for (int j = 0; j < n - i; j++) {
+            cout << ch;
+        }
+        ch = ch + 1;
+        cout << endl;
+    }
+    return 0;
+}
+
+//output
+// Enter a number: 6
+// ====================
+// AAAAAA
+//  BBBBB
+//   CCCC
+//    DDD
+//     EE
+//      F
 //-------------------------
 // Explaination//
 
