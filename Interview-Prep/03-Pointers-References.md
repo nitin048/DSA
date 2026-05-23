@@ -408,13 +408,48 @@ int* getPointer() {
 
 ---
 
+## 📊 Complexity Analysis
+
+### **Pointer Operations:**
+
+```cpp
+int* ptr = &x;      // O(1) - assignment
+*ptr = 10;          // O(1) - dereference
+ptr++;              // O(1) - arithmetic
+```
+
+### **Memory:**
+
+- **Pointer size:** 8 bytes (64-bit system), 4 bytes (32-bit)
+- **Reference:** No extra memory (alias)
+
+---
+
 ## 🔥 Must Remember
+
+### **Key Concepts:**
 
 1. **Always initialize pointers** (nullptr if nothing else)
 2. **Delete what you new** (or use smart pointers)
 3. **Set to nullptr after delete**
 4. **Use references for function parameters**
 5. **Prefer smart pointers over raw pointers**
+
+### **Common Mistakes:**
+
+- ❌ Uninitialized pointers (wild pointers)
+- ❌ Memory leaks (forgot to delete)
+- ❌ Double delete
+- ❌ Dangling pointers (pointing to freed memory)
+- ❌ Returning address of local variable
+
+### **Best Practices:**
+
+- ✅ Use `nullptr` instead of `NULL` or `0`
+- ✅ Check pointer before dereferencing
+- ✅ Use smart pointers (`unique_ptr`, `shared_ptr`)
+- ✅ Use references for function parameters
+- ✅ Initialize pointers immediately
 
 ---
 

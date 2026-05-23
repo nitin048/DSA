@@ -4,7 +4,48 @@
 
 ---
 
+## 📋 What is STL?
+
+### **Definition:**
+
+The Standard Template Library (STL) is a powerful set of **C++ template classes** that provide general-purpose **containers**, **algorithms**, and **iterators**. It's a cornerstone of modern C++ programming.
+
+### **Components:**
+
+1. **Containers** - Data structures (vector, map, set, etc.)
+2. **Algorithms** - Functions for processing data (sort, search, etc.)
+3. **Iterators** - Objects for traversing containers
+4. **Function Objects** - Objects that act like functions
+5. **Adapters** - Modify interface of containers/iterators
+
+### **Why Use STL?**
+
+- ✅ **Pre-tested** - Reliable, bug-free implementations
+- ✅ **Efficient** - Optimized for performance
+- ✅ **Reusable** - Generic, works with any data type
+- ✅ **Time-saving** - No need to implement from scratch
+- ✅ **Standard** - Available in all C++ compilers
+
+### **Philosophy:**
+
+```
+STL = Containers + Algorithms + Iterators
+
+Containers store data
+Algorithms process data
+Iterators connect them
+```
+
+---
+
 ## 📋 Containers
+
+### **Container Categories:**
+
+1. **Sequence Containers** - Linear order (vector, deque, list)
+2. **Associative Containers** - Sorted, key-based (set, map)
+3. **Unordered Containers** - Hash-based (unordered_set, unordered_map)
+4. **Container Adapters** - Restricted interface (stack, queue, priority_queue)
 
 ### **Sequence Containers:**
 
@@ -310,6 +351,100 @@ get<0>(t), get<1>(t), get<2>(t)
 sort(v.begin(), v.end(), [](int a, int b) {
     return a > b;
 });
+```
+
+---
+
+## 🎯 When to Use Which Container?
+
+### **Decision Tree:**
+
+```
+Need ordered elements?
+├─ Yes → Need unique?
+│  ├─ Yes → set
+│  └─ No → multiset
+└─ No → Need fast lookup?
+   ├─ Yes → unordered_set/map
+   └─ No → vector/deque
+```
+
+### **Performance Comparison:**
+
+| Container         | Access | Insert   | Delete   | Search   | Use Case               |
+| ----------------- | ------ | -------- | -------- | -------- | ---------------------- |
+| vector            | O(1)   | O(n)     | O(n)     | O(n)     | Dynamic array          |
+| deque             | O(1)   | O(1)\*   | O(1)\*   | O(n)     | Both ends              |
+| list              | O(n)   | O(1)     | O(1)     | O(n)     | Frequent insert/delete |
+| set/map           | -      | O(log n) | O(log n) | O(log n) | Sorted, unique         |
+| unordered_set/map | -      | O(1)†    | O(1)†    | O(1)†    | Fast lookup            |
+| stack             | O(1)   | O(1)     | O(1)     | -        | LIFO                   |
+| queue             | O(1)   | O(1)     | O(1)     | -        | FIFO                   |
+| priority_queue    | O(1)   | O(log n) | O(log n) | -        | Priority               |
+
+\*At ends only  
+†Average case
+
+---
+
+## 🔥 Must Remember
+
+### **Key Concepts:**
+
+1. **vector** - Dynamic array, use most often
+2. **map/set** - Sorted, O(log n) operations
+3. **unordered_map/set** - Hash table, O(1) average
+4. **Iterators** - Connect containers and algorithms
+5. **Algorithms** - sort, find, binary_search, etc.
+
+### **Common Mistakes:**
+
+- ❌ Using vector when unordered_set is better
+- ❌ Not reserving vector capacity
+- ❌ Modifying container while iterating
+- ❌ Using map when unordered_map is sufficient
+- ❌ Not checking iterator validity
+
+### **Best Practices:**
+
+- ✅ Use vector by default
+- ✅ Use unordered_map for O(1) lookup
+- ✅ Use set/map when order matters
+- ✅ Reserve vector capacity if size known
+- ✅ Use range-based for loops
+- ✅ Prefer algorithms over manual loops
+
+---
+
+## 🎓 STL Complexity Cheat Sheet
+
+### **Sequence Containers:**
+
+```cpp
+vector:  Access O(1), Insert O(n), Delete O(n)
+deque:   Access O(1), Insert O(1)*, Delete O(1)*
+list:    Access O(n), Insert O(1), Delete O(1)
+```
+
+### **Associative Containers:**
+
+```cpp
+set/map:           Insert O(log n), Search O(log n)
+multiset/multimap: Insert O(log n), Search O(log n)
+```
+
+### **Unordered Containers:**
+
+```cpp
+unordered_set/map: Insert O(1)†, Search O(1)†
+```
+
+### **Container Adapters:**
+
+```cpp
+stack:          Push O(1), Pop O(1), Top O(1)
+queue:          Push O(1), Pop O(1), Front O(1)
+priority_queue: Push O(log n), Pop O(log n), Top O(1)
 ```
 
 ---
