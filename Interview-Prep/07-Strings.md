@@ -4,6 +4,49 @@
 
 ---
 
+## 📋 What is a String?
+
+### **Definition:**
+
+A string is a **sequence of characters** stored in contiguous memory. In C++, strings can be represented as **character arrays** (C-style) or **std::string** objects.
+
+### **Key Characteristics:**
+
+- **Mutable in C++** - Can modify characters
+- **Null-terminated** - C-style strings end with '\0'
+- **Dynamic size** - std::string can grow/shrink
+- **Character access** - O(1) by index
+- **Rich operations** - Many built-in methods
+
+### **Memory Layout:**
+
+```
+string s = "HELLO";
+
+C-style (char[]):
+┌───┬───┬───┬───┬───┬────┐
+│ H │ E │ L │ L │ O │ \0 │
+└───┴───┴───┴───┴───┴────┘
+ 0   1   2   3   4   5
+
+std::string (simplified):
+┌─────────┬──────┬──────────┐
+│ pointer │ size │ capacity │
+└─────────┴──────┴──────────┘
+     ↓
+  [H][E][L][L][O]
+```
+
+### **Why Use Strings?**
+
+- ✅ **Text processing** - Natural for text data
+- ✅ **Pattern matching** - Search, replace
+- ✅ **Parsing** - Extract information
+- ✅ **Communication** - User I/O
+- ✅ **Data representation** - JSON, XML
+
+---
+
 ## 📋 String Basics
 
 ### **Declaration:**

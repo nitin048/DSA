@@ -4,6 +4,200 @@
 
 ---
 
+## 📋 What is a Tree?
+
+### **Definition:**
+
+A **tree** is a **hierarchical data structure** consisting of nodes connected by edges. It's a non-linear structure that represents a parent-child relationship.
+
+**Key Properties:**
+
+- One **root** node (top)
+- Each node has **zero or more children**
+- No **cycles** (acyclic graph)
+- Exactly **one path** between any two nodes
+- N nodes have **N-1 edges**
+
+### **Real-World Analogy:**
+
+- **Family tree** 👨‍👩‍👧‍👦 - Ancestors and descendants
+- **File system** 📁 - Folders and files
+- **Organization chart** 🏢 - Company hierarchy
+- **Decision tree** 🤔 - If-else logic
+- **DOM tree** 🌐 - HTML structure
+
+### **Tree Visualization:**
+
+```
+                    1 (Root)
+                   / \
+                  /   \
+                 2     3
+                / \     \
+               4   5     6
+              /
+             7
+
+Terminology:
+- Root: 1
+- Parent of 4: 2
+- Children of 2: 4, 5
+- Siblings: 4 and 5
+- Leaf nodes: 4, 5, 6, 7
+- Internal nodes: 1, 2, 3
+- Height: 3 (longest path from root to leaf)
+- Depth of 4: 2 (distance from root)
+```
+
+### **Tree Terminology:**
+
+| Term           | Definition                              | Example       |
+| -------------- | --------------------------------------- | ------------- |
+| **Root**       | Top node with no parent                 | 1             |
+| **Parent**     | Node with children                      | 2 is parent   |
+| **Child**      | Node with a parent                      | 4 is child    |
+| **Leaf**       | Node with no children                   | 7, 5, 6       |
+| **Internal**   | Node with at least one child            | 1, 2, 3       |
+| **Sibling**    | Nodes with same parent                  | 4 and 5       |
+| **Ancestor**   | Parent, grandparent, etc.               | 1, 2 for 7    |
+| **Descendant** | Child, grandchild, etc.                 | 4, 7 for 2    |
+| **Height**     | Longest path from node to leaf          | Height of 1=3 |
+| **Depth**      | Distance from root to node              | Depth of 4=2  |
+| **Level**      | Depth + 1                               | Level of 4=3  |
+| **Subtree**    | Tree formed by node and its descendants | Subtree at 2  |
+| **Degree**     | Number of children                      | Degree of 2=2 |
+
+---
+
+## 🎯 Why Use Trees?
+
+### **Advantages:**
+
+✅ **Hierarchical structure** - Natural for nested data  
+✅ **Fast search** - O(log n) in balanced BST  
+✅ **Fast insert/delete** - O(log n) in balanced BST  
+✅ **Ordered data** - BST maintains sorted order  
+✅ **Flexible** - Many variations for different needs
+
+### **Disadvantages:**
+
+❌ **Complex implementation** - More code than arrays  
+❌ **No random access** - Must traverse  
+❌ **Extra memory** - Pointers take space  
+❌ **Can become unbalanced** - Degrades to O(n)
+
+### **When to Use:**
+
+- **Hierarchical data** - File systems, org charts
+- **Fast search** - Databases, dictionaries
+- **Sorted data** - Maintain order with fast operations
+- **Expression parsing** - Compilers, calculators
+- **Decision making** - AI, game trees
+
+---
+
+## 📊 Binary Tree Types
+
+### **1. Full Binary Tree:**
+
+```
+Every node has 0 or 2 children
+
+       1
+      / \
+     2   3
+    / \
+   4   5
+```
+
+### **2. Complete Binary Tree:**
+
+```
+All levels filled except last (filled left to right)
+
+       1
+      / \
+     2   3
+    / \  /
+   4  5 6
+```
+
+### **3. Perfect Binary Tree:**
+
+```
+All internal nodes have 2 children, all leaves at same level
+
+       1
+      / \
+     2   3
+    / \ / \
+   4  5 6  7
+```
+
+### **4. Balanced Binary Tree:**
+
+```
+Height difference between left and right ≤ 1
+
+       1
+      / \
+     2   3
+    /
+   4
+```
+
+### **5. Binary Search Tree (BST):**
+
+```
+Left < Root < Right
+
+       5
+      / \
+     3   7
+    / \ / \
+   2  4 6  8
+```
+
+### **6. Degenerate Tree (Skewed):**
+
+```
+Each node has only one child (worst case)
+
+1
+ \
+  2
+   \
+    3
+     \
+      4
+```
+
+---
+
+## 📊 Complexity Analysis
+
+### **Binary Search Tree (Balanced):**
+
+| Operation | Average  | Worst (Unbalanced) |
+| --------- | -------- | ------------------ |
+| Search    | O(log n) | O(n)               |
+| Insert    | O(log n) | O(n)               |
+| Delete    | O(log n) | O(n)               |
+| Space     | O(n)     | O(n)               |
+
+### **Tree Traversal:**
+
+| Traversal   | Time | Space (Recursion) | Use Case                |
+| ----------- | ---- | ----------------- | ----------------------- |
+| Inorder     | O(n) | O(h)              | BST → Sorted order      |
+| Preorder    | O(n) | O(h)              | Copy tree, prefix expr  |
+| Postorder   | O(n) | O(h)              | Delete tree, postfix    |
+| Level Order | O(n) | O(w)              | BFS, level-wise process |
+
+h = height, w = max width
+
+---
+
 ## 📋 Tree Basics
 
 ### **Node Structure:**

@@ -4,6 +4,177 @@
 
 ---
 
+## 📋 What is a Hash Table?
+
+### **Definition:**
+
+A **hash table** (hash map) is a data structure that stores **key-value pairs** and provides **O(1) average-time** operations for:
+
+- Insert
+- Delete
+- Search
+
+It uses a **hash function** to compute an index (hash code) where the value is stored in an array.
+
+### **Real-World Analogy:**
+
+- **Dictionary** 📖 - Word (key) → Definition (value)
+- **Phone book** 📞 - Name (key) → Phone number (value)
+- **Library catalog** 📚 - ISBN (key) → Book location (value)
+- **Cache** 💾 - URL (key) → Cached page (value)
+- **Database index** 🗄️ - ID (key) → Record (value)
+
+### **How Hash Tables Work:**
+
+```
+1. Hash Function:
+   key → hash(key) → index
+
+   "apple" → hash("apple") → 5
+   "banana" → hash("banana") → 2
+
+2. Storage:
+   Index  Value
+   ┌───┬────────┐
+   │ 0 │        │
+   │ 1 │        │
+   │ 2 │ banana │ ← hash("banana") = 2
+   │ 3 │        │
+   │ 4 │        │
+   │ 5 │ apple  │ ← hash("apple") = 5
+   │ 6 │        │
+   └───┴────────┘
+
+3. Collision Handling:
+   If hash("cherry") = 2 (same as banana):
+
+   Chaining:
+   Index  Value
+   ┌───┬────────────────┐
+   │ 2 │ banana → cherry│
+   └───┴────────────────┘
+
+   Open Addressing:
+   Try next available slot
+```
+
+---
+
+## 🎯 Hash Function Properties
+
+### **Good Hash Function:**
+
+1. **Deterministic** - Same input → same output
+2. **Uniform distribution** - Spread keys evenly
+3. **Fast to compute** - O(1) time
+4. **Minimize collisions** - Different keys → different indices
+
+### **Common Hash Functions:**
+
+```cpp
+// Simple hash for integers
+int hash(int key, int tableSize) {
+    return key % tableSize;
+}
+
+// String hash (polynomial rolling)
+int hash(string key, int tableSize) {
+    int hash = 0;
+    for (char c : key) {
+        hash = (hash * 31 + c) % tableSize;
+    }
+    return hash;
+}
+```
+
+---
+
+## 🎯 Collision Resolution
+
+### **1. Chaining (Separate Chaining):**
+
+```
+Each bucket contains a linked list
+
+Index  Linked List
+┌───┬──────────────┐
+│ 0 │ → A → D      │
+│ 1 │ → B          │
+│ 2 │ → C → E → F  │
+│ 3 │              │
+└───┴──────────────┘
+
+Pros: Simple, handles many collisions
+Cons: Extra memory for pointers
+```
+
+### **2. Open Addressing:**
+
+```
+Find next available slot
+
+Linear Probing:
+If slot i is full, try i+1, i+2, ...
+
+Quadratic Probing:
+If slot i is full, try i+1², i+2², ...
+
+Double Hashing:
+Use second hash function for step size
+```
+
+---
+
+## 🎯 Why Use Hash Tables?
+
+### **Advantages:**
+
+✅ **Fast operations** - O(1) average insert/delete/search  
+✅ **Flexible keys** - Any hashable type  
+✅ **Cache-friendly** - Good locality (open addressing)  
+✅ **Simple interface** - Easy to use
+
+### **Disadvantages:**
+
+❌ **No order** - Keys are not sorted  
+❌ **Worst case O(n)** - With many collisions  
+❌ **Space overhead** - Need extra space for load factor  
+❌ **Hash function** - Need good hash function
+
+### **When to Use:**
+
+- **Fast lookup** - Need O(1) search
+- **Counting frequency** - Count occurrences
+- **Caching** - Store computed results
+- **Deduplication** - Remove duplicates
+- **Two sum problems** - Find pairs
+
+### **When NOT to Use:**
+
+- Need **sorted data** (use BST/map)
+- Need **range queries** (use BST)
+- **Memory is limited** (hash tables need extra space)
+- Need **worst-case guarantees** (use balanced BST)
+
+---
+
+## 📊 Complexity Analysis
+
+| Operation | Average | Worst Case |
+| --------- | ------- | ---------- |
+| Insert    | O(1)    | O(n)       |
+| Delete    | O(1)    | O(n)       |
+| Search    | O(1)    | O(n)       |
+| Space     | O(n)    | O(n)       |
+
+**Load Factor (α) = n / m**
+
+- n = number of elements
+- m = table size
+- Keep α < 0.75 for good performance
+
+---
+
 ## 📋 Hash Table Basics
 
 ```cpp
