@@ -239,7 +239,9 @@ DSA/
 │   ├── 06_Conditionals/        # If, switch, ternary
 │   ├── 07_Loops/               # For, while, do-while
 │   ├── 08_Patterns/            # Pattern printing
-│   └── 09_Functions/           # Functions and methods
+│   ├── 09_Functions/           # Functions and methods
+│   ├── 10_Binary_Number_System/ # Binary, Decimal conversion, Two's complement
+│   └── 11_Bitwise_Operator/    # Bitwise operators, Data type modifiers
 │
 ├── DataStructure&Algorithm/    # Complete DSA series (127 lectures)
 │   ├── 01-Arrays & Vector Problems/           # Lectures 1-8
@@ -450,13 +452,16 @@ Each C++ topic includes comprehensive guides:
 
 - 📖 [Basics Guide](C++/01_Basics/README.md)
 - 📖 [Variables Guide](C++/02_Variables/README.md)
-- 📖 [Operators Guide](C++/03_Operators/README.md)
+- �� [Operators Guide](C++/03_Operators/README.md)
 - 📖 [Input/Output Guide](C++/04_InputOutput/README.md)
 - 📖 [Type Casting Guide](C++/05_Typecasting/README.md)
 - 📖 [Conditionals Guide](C++/06_Conditionals/README.md)
 - 📖 [Loops Guide](C++/07_Loops/README.md)
 - 📖 [Patterns Guide](C++/08_Patterns/README.md)
 - 📖 [Functions Guide](C++/09_Functions/README.md) - **Includes Memory Explanation!** 🧠
+- 📖 [Binary Number System](C++/10_Binary_Number_System/README.md) - **Binary, Decimal, Two's Complement** 🔢
+- 📖 [Bitwise Operators](C++/11_Bitwise_Operator/README.md) - **Bit Manipulation & Data Type Modifiers** ⚡
+
 
 #### Data Structures & Algorithms
 
