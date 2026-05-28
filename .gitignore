@@ -63,22 +63,26 @@ compile_commands.json
 # ============================================
 
 # 🎯 UNIVERSAL SOLUTION: Ignore ALL executables (files without extensions)
-# This works for ANY filename you create!
+# This works for ANY filename you create in BOTH C++ and DataStructure&Algorithm folders!
 # 
 # How it works:
-# 1. Ignore all files in C++ folders
-# 2. But keep files with extensions (.cpp, .md, .txt, etc.)
+# 1. Ignore all files in C++ and DSA folders
+# 2. But keep files with extensions (.cpp, .md, .txt, .pdf, etc.)
 # 3. But keep directories
 #
 # This means:
 # ✅ 01-Functions.cpp    → Tracked (has .cpp extension)
 # ❌ 01-Functions        → Ignored (no extension = executable)
-# ✅ 02-Functions.cpp    → Tracked (has .cpp extension)
-# ❌ 02-Functions        → Ignored (no extension = executable)
+# ✅ 02-array.cpp        → Tracked (has .cpp extension)
+# ❌ 02-array            → Ignored (no extension = executable)
 # ✅ myProgram.cpp       → Tracked (has .cpp extension)
 # ❌ myProgram           → Ignored (no extension = executable)
 # ✅ README.md           → Tracked (has .md extension)
 # ✅ folder/             → Tracked (is a directory)
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# FOR C++ FOLDER
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 # Step 1: Ignore everything in C++ folders
 C++/**/*
@@ -94,8 +98,26 @@ C++/**/*.out
 C++/**/*.exe
 C++/**/*.app
 
-# 🔥 RESULT: This pattern ignores ALL executables regardless of name!
-# Works for: 01-Functions, 02-Functions, myCode, test, anything!
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# FOR DataStructure&Algorithm FOLDER
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# Step 1: Ignore everything in DataStructure&Algorithm folders
+DataStructure&Algorithm/**/*
+
+# Step 2: But DON'T ignore files with ANY extension
+!DataStructure&Algorithm/**/*.*
+
+# Step 3: But DON'T ignore directories (so we can traverse them)
+!DataStructure&Algorithm/**/
+
+# Step 4: But DO ignore common executable extensions (just in case)
+DataStructure&Algorithm/**/*.out
+DataStructure&Algorithm/**/*.exe
+DataStructure&Algorithm/**/*.app
+
+# 🔥 RESULT: This pattern ignores ALL executables regardless of name in BOTH folders!
+# Works for: 01-Functions, 02-array, myCode, test, anything!
 # No need to manually add each executable name! 🎉
 
 # ============================================
