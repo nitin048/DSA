@@ -745,6 +745,10 @@ notes.txt
 TODO.txt
 NOTES.md
 
+# Graphify
+graphify-out/
+graph.html
+
 # ============================================
 # END OF .GITIGNORE
 # ============================================
