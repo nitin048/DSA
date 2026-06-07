@@ -15,7 +15,25 @@ This repository is designed to provide a structured approach to learning data st
 
 ## ✨ Features
 
-This repository is fully configured for modern C++ development:
+This repository is fully configured for modern C++ development and study tracking:
+
+### 📘 6-Page Visual Blueprints (PDF Study Guides)
+
+Every lecture topic (from Pointers to Graphs) comes with a high-fidelity **6-page landscape PDF study guide** featuring:
+- **Core Concepts & Memory Blueprint:** Visual block diagrams and mental models.
+- **C++ Reference Code:** Syntactically correct implementations.
+- **Complexity Analysis & Best Practices:** Complete Big-O tables and development rules.
+- **Execution Dry Run (Slide 5):** Category-specific traces (e.g. pointers addresses, binary search boundaries, stack levels, recursion tree steps).
+- **Interview Variations (Slide 6):** Common optimization traps, space-time tradeoffs, and curated LeetCode problem recommendations.
+
+### 📝 Lecture-Level README Study Guides
+
+Every single one of the 127 lecture subfolders contains a dedicated, highly detailed `README.md` guide that includes:
+- **Real-Life Analogies:** Simple comparisons (like row of lockers for arrays, paper dictionaries for binary search, scavenger hunts for linked lists).
+- **Advantages & Disadvantages:** Complete tradeoffs analysis.
+- **C++ Reference Code & Complexities:** Copy-pasteable starter templates and Big-O complexity tables.
+- **Practice Problems:** Curated interview lists categorized by difficulty (Easy, Medium, Hard).
+- **Interactive Checklists:** Learning trackers.
 
 ### 🧠 IntelliSense
 
@@ -36,15 +54,6 @@ This repository is fully configured for modern C++ development:
 - **Control structures** - `if`, `for`, `while`, `switch` + Tab
 - **Data structures** - `vec`, `vec2d` + Tab for vectors
 - **See all**: [.vscode/SNIPPETS.md](.vscode/SNIPPETS.md)
-
-### 📚 Comprehensive Guides
-
-- **Basics** - [First C++ program](C++/01_Basics/README.md)
-- **Variables** - [Complete guide](C++/02_Variables/README.md)
-- **Operators** - [All operators explained](C++/03_Operators/README.md)
-- **Input/Output** - [I/O operations](C++/04_InputOutput/README.md)
-- **Type Casting** - [All cast types](C++/05_Typecasting/README.md)
-- **Conditionals** - [If, switch, ternary](C++/06_Conditionals/README.md)
 
 ### 🛠️ Development Tools
 
